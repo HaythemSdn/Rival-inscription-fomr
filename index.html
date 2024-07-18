@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Login Page</title>
+    <title>Multi-Step Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
@@ -12,40 +12,159 @@
 </head>
 
 <body>
-    <!-- partial:index.partial.html -->
     <div class="container row login-box">
-        <div class="col login-title">
-            <h1>
-                What will you build today?
-            </h1>
-            <span class="small-text">Let's get started!</span>
+        <div class="col login-title ">
+            <h1 class="text-center">Devenir un nouveau membre de la famille RIVAL ?</h1>
+            <span class="small-text">Inscrivez vous ICI ! </span>
+            <img src="assets/rival_logo.jpg" alt="">
         </div>
+
         <div class="col login-form">
-            <div class="avatar">
-                <!-- <img src="https://68.media.tumblr.com/avatar_8671f0f36a5f_128.png" alt="" /> -->
+            <div class="progress-bar">
+                <div class="step active">1</div>
+                <div class="step">2</div>
+                <div class="step">3</div>
+                <div class="step">4</div>
+                <div class="step">5</div>
             </div>
-            <div class="registration">
-                Need an Account? <a href="#">Sing Up</a>.
+            <div class="error-div hidden">
+                Please fill in all required fields before proceeding.
             </div>
-            <form action="" method="POST">
-                <label for="login" class="login">
-                    <input id="login" type="text" placeholder="Username" />
-                </label>
-                <label for="passwd" class="passwd">
-                    <input id="passwd" type="password" placeholder="Password" />
-                </label>
-                <label class="cameraButton">Take a picture
-                    <input type="file" accept="image/*;capture=camera">
-                  </label>
-                <button class="button" type="submit">Sign In</button>
+            <form id="multi-step-form" class="">
+                <!-- Step 1 -->
+                <div class="form-step active">
+                    <h2>Les Coordonnées</h2>
+                    <div class="flex">
+                        <div>
+                            <label for="name"><span style="color: red; padding-right:3px ;">*</span>Nom et
+                                prénom</label>
+                            <input id="name" name="firstname" type="text" required>
+                        </div>
+                        <div>
+                            <label for="dob"><span style="color: red; padding-right:3px ;">*</span>Date de
+                                naissance</label>
+                            <input id="dob" name="date_de_naissance" type="date" required>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div>
+
+                            <label for="pob"><span style="color: red; padding-right:3px ;">*</span>Lieu de
+                                naissance</label>
+                            <input id="pob" name="lieu_de_naissance" type="text" required>
+                        </div>
+                        <div>
+
+                            <label for="address"><span style="color: red; padding-right:3px ;">*</span>Adresse</label>
+                            <input id="address" name="adresse" type="text" required>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div>
+
+                            <label for="education"><span style="color: red; padding-right:3px ;">*</span>Niveau
+                                d'études</label>
+                            <select id="education" name="niveau_d_etudes" required>
+                                <option value="cem">CEM</option>
+                                <option value="lycee">Lycée</option>
+                                <option value="universite">Université</option>
+                            </select>
+                        </div>
+                        <div class="hidden Spécialité">
+                            <label for="Spécialité">Spécialité universitaire</label>
+                            <input id="Spécialité" name="specialite" type="text">
+                        </div>
+
+                    </div>
+
+
+
+
+                    <button type="button" class="next-button">Suivant</button>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="form-step hidden">
+                    <h2>Contact</h2>
+                    <label for="phone"><span style="color: red; padding-right:3px ;">*</span>Numéro téléphone</label>
+                    <input id="phone" name="phone" type="tel" required>
+
+                    <label for="whatsapp">Numéro WhatsApp</label>
+                    <input id="whatsapp" name="hs_whatsapp_phone_number" type="tel">
+
+                    <label for="email"><span style="color: red; padding-right:3px ;">*</span>Email</label>
+                    <input id="email" name="Email" type="email" required>
+
+                    <button type="button" class="prev-button">Precedent</button>
+                    <button type="button" class="next-button">Suivant</button>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="form-step">
+                    <h2>Formation & Disponibilité</h2>
+                    <label for="formation"><span style="color: red; padding-right:3px ;">*</span>Formation</label>
+                    <input id="formation" name="Formation" type="text" required>
+
+                    <label for="availability"><span
+                            style="color: red; padding-right:3px ;">*</span>Disponibilité</label>
+                    <input id="availability" name="Disponibilité" type="text" required>
+
+                    <button type="button" class="prev-button">Precedent</button>
+                    <button type="button" class="next-button">Suivant</button>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="form-step ">
+                    <h2>Dossier d'inscription</h2>
+                    <label for="photo"><span style="color: red; padding-right:3px ;">*</span>Photo d'identité</label>
+                    <input id="photo" name="photo_d_identite" type="file" accept="image/*" required>
+                    <div class="Preview">
+                        <img id="photo-preview" src="" alt="Photo d'identité Preview" style="display:none;">
+                    </div>
+
+
+                    <label for="id-card"><span style="color: red; padding-right:3px ;">*</span>Photo carte d'identité
+                        recto-verso</label>
+                    <input id="id-card" name="photo_carte_d_identite" type="file" accept="image/*" required>
+                    <div class="Preview">
+                        <img id="id-card-preview" src="" alt="Carte d'identité Preview" style="display:none;">
+                    </div>
+
+                    
+                    <label for="birth-certificate">Photo Extrait de Naissance</label>
+                    <input id="birth-certificate" name="extrait_de_naissance" type="file" accept="image/*">
+                    <div class="Preview">
+                        <img id="birth-certificate-preview" src="" alt="Extrait de Naissance Preview"
+                            style="display:none;">
+                    </div>
+                    <button type="button" class="prev-button">Precedent</button>
+                    <button type="button" class="next-button">Suivant</button>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="form-step">
+                    <h2>Règles générales</h2>
+                    <label for="rules">
+                        <input id="rules" name="rules" type="checkbox" required> I agree to the rules and regulations
+                    </label>
+
+                    <button type="button" class="prev-button">Precedent</button>
+                    <button type="submit" class="button">Submit</button>
+                </div>
             </form>
-            <div class="lost-passwd">
-                <a href="#">Forgot your password?</a>
+            <div id="success-message" class=" success-message hidden">
+                <h2>Inscription réussie!</h2>
+                <img src="assets/icons8-vérifié-500.png" alt="">
+                <p>Merci pour votre inscription, et bienvenu dans la famille <span>RIVAL</span> !</p>
             </div>
         </div>
     </div>
-    <!-- partial -->
     <script src="./script.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
 </body>
 
 </html>
