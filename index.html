@@ -23,9 +23,9 @@
             <div class="progress-bar">
                 <div class="step active">1</div>
                 <div class="step">2</div>
+                <!-- <div class="step">3</div> -->
                 <div class="step">3</div>
                 <div class="step">4</div>
-                <div class="step">5</div>
             </div>
             <div class="error-div hidden">
                 Please fill in all required fields before proceeding.
@@ -38,51 +38,179 @@
                         <div>
                             <label for="name"><span style="color: red; padding-right:3px ;">*</span>Nom et
                                 prénom</label>
-                            <input id="name" name="firstname" type="text" required>
+                            <input id="name" name="lastname" type="text" required>
                         </div>
                         <div>
                             <label for="dob"><span style="color: red; padding-right:3px ;">*</span>Date de
                                 naissance</label>
-                            <input id="dob" name="date_de_naissance" type="date" required>
+                            <input id="dob" name="date_of_birth" type="date" required>
                         </div>
                     </div>
                     <div class="flex">
-                        <div>
-
-                            <label for="pob"><span style="color: red; padding-right:3px ;">*</span>Lieu de
-                                naissance</label>
-                            <input id="pob" name="lieu_de_naissance" type="text" required>
-                        </div>
                         <div>
 
                             <label for="address"><span style="color: red; padding-right:3px ;">*</span>Adresse</label>
-                            <input id="address" name="adresse" type="text" required>
+                            <input id="address" name="address" type="text" required>
                         </div>
-                    </div>
-                    <div class="flex">
+
                         <div>
 
                             <label for="education"><span style="color: red; padding-right:3px ;">*</span>Niveau
                                 d'études</label>
                             <select id="education" name="niveau_d_etudes" required>
-                                <option value="cem">CEM</option>
-                                <option value="lycee">Lycée</option>
-                                <option value="universite">Université</option>
+                                <option value="">Séléctioner</option>
+                                <option value="CEM">CEM</option>
+                                <option value="Lycée">Lycée</option>
+                                <option value="Université">Université</option>
                             </select>
                         </div>
-                        <div class="hidden Spécialité">
-                            <label for="Spécialité">Spécialité universitaire</label>
+                    </div>
+                    <div class="flex hidden Spécialité">
+                        <div class="">
+                            <label for="Spécialité" required>Spécialité universitaire</label>
                             <input id="Spécialité" name="specialite" type="text">
                         </div>
+                        <div class="">
+                            <label for="annee_d_etude"><span style="color: red; padding-right:3px ;">*</span>
+                                Année d'étude
+                            </label>
+                            <select id="annee_d_etude" name="annee_d_etude" required>
+                                <option value="">Séléctioner</option>
+                                <option value="L1">L1</option>
+                                <option value="L2">L2</option>
+                                <option value="L3">L4</option>
+                                <option value="M1">M1</option>
+                                <option value="M2">M2</option>
+                            </select>
 
+                        </div>
                     </div>
+                    <div class="formation">
+                        <label for="formation"><span style="color: red; padding-right:3px ;">*</span>
+                            Formation
+                        </label>
+                        <select id="formation" name="formation" required>
+                            <option value="">Séléctioner</option>
+                            <option disabled style="font-weight: bold; background-color: #f0f0f0;">INFORMATIQUE</option>
+                            <option value="Excel Avancé">Excel Avancé</option>
+                            <option value="Création des Sites Web">Création des Sites Web</option>
+                            <option value="Java / PHP / C++ / MySQL / Python">Java / PHP / C++ / MySQL / Python</option>
+                            <option value="ArchiCad / Autocad">ArchiCad / Autocad</option>
+                            <option value="Revit / Lumion / 3DS Max">Revit / Lumion / 3DS Max</option>
+                            <option value="Réseaux Informatiques">Réseaux Informatiques</option>
+                            <option value="Maintenance Informatique">Maintenance Informatique</option>
+                            <option value="Maintenance des Téléphones Portables">Maintenance des Téléphones Portables
+                            </option>
+                            <option value="Installation des Caméras de Surveillance">Installation des Caméras de
+                                Surveillance</option>
 
+                            <option disabled style="font-weight: bold; background-color: #f0f0f0;">FORMATIONS MEDICALES
+                            </option>
+                            <option value="Aide Soignant(e)">Aide Soignant(e)</option>
+                            <option value="Assistant(e) Médical">Assistant(e) Médical</option>
+                            <option value="Assistant(e) Dentaire">Assistant(e) Dentaire</option>
+                            <option value="Assistant(e) Laboratoire">Assistant(e) Laboratoire</option>
+                            <option value="Vendeur(se) en Pharmacie">Vendeur(se) en Pharmacie</option>
+                            <option value="Auxiliaire de Vie">Auxiliaire de Vie</option>
+                            <option value="Garde Malade">Garde Malade</option>
+                            <option value="Délégué Médical">Délégué Médical</option>
+                            <option value="Secourisme">Secourisme</option>
 
+                            <option disabled style="font-weight: bold; background-color: #f0f0f0;">FORMATIONS
+                                ARTISANALES</option>
+                            <option value="Résine époxy">Résine époxy</option>
+                            <option value="Cire Parfumé">Cire Parfumé</option>
+                            <option value="Fabrication des Fromages">Fabrication des Fromages</option>
+                            <option value="Chocolaterie">Chocolaterie</option>
+                            <option value="Fabrication des Sauces">Fabrication des Sauces</option>
+                            <option value="Fabrication des Jus">Fabrication des Jus</option>
+                            <option value="Fabrication de Bijoux">Fabrication de Bijoux</option>
+                            <option value="Fabrication de Parfums">Fabrication de Parfums</option>
+                            <option value="Fabrication des produits de Beauté / Nettoyage">Fabrication des produits de
+                                Beauté / Nettoyage</option>
+                            <option value="Sérigraphie">Sérigraphie</option>
 
+                            <option disabled style="font-weight: bold; background-color: #f0f0f0;">HSE & TRAVAUX PUBLICS
+                            </option>
+                            <option value="Manager HSE">Manager HSE</option>
+                            <option value="Superviseur HSE">Superviseur HSE</option>
+                            <option value="Inspecteur HSE">Inspecteur HSE</option>
+                            <option value="Agent HSE">Agent HSE</option>
+                            <option value="Conducteur des Travaux">Conducteur des Travaux</option>
+                            <option value="Topographie">Topographie</option>
+
+                            <option disabled style="font-weight: bold; background-color: #f0f0f0;">FORMATIONS DE BEAUTE
+                            </option>
+                            <option value="Onglerie">Onglerie</option>
+                            <option value="Extension des Cils">Extension des Cils</option>
+                            <option value="Rehaussement des Cils">Rehaussement des Cils</option>
+                            <option value="Esthétique Sans Chirurgie">Esthétique Sans Chirurgie</option>
+                            <option value="Esthétique Dame">Esthétique Dame</option>
+                            <option value="Esthétique Homme">Esthétique Homme</option>
+                            <option value="Coiffure Dame">Coiffure Dame</option>
+                            <option value="Coiffure Homme">Coiffure Homme</option>
+                            <option value="Haute Coiffure (3D)">Haute Coiffure (3D)</option>
+                            <option value="Make-Up Artistique & Professionnel">Make-Up Artistique & Professionnel
+                            </option>
+
+                            <option disabled style="font-weight: bold; background-color: #f0f0f0;">FORMATIONS DE
+                                RESTAURATION</option>
+                            <option value="Pâtisserie">Pâtisserie</option>
+                            <option value="Gâteaux Traditionnels">Gâteaux Traditionnels</option>
+                            <option value="Viennoiserie">Viennoiserie</option>
+                            <option value="Pizza">Pizza</option>
+                            <option value="Pain">Pain</option>
+                            <option value="MASTERCLASS Brioche">MASTERCLASS Brioche</option>
+                            <option value="MASTERCLASS Mini tartelette">MASTERCLASS Mini tartelette</option>
+                            <option value="MASTERCLASS Salés">MASTERCLASS Salés</option>
+                            <option value="MASTERCLASS Layer cake">MASTERCLASS Layer cake</option>
+                            <option value="MASTERCLASS Gâteaux au miel">MASTERCLASS Gâteaux au miel</option>
+                            <option value="MASTERCLASS Cake design">MASTERCLASS Cake design</option>
+                            <option value="Cuisine des Fêtes">Cuisine des Fêtes</option>
+                            <option value="Cuisine Syrien">Cuisine Syrien</option>
+                            <option value="Cuisine Tunisienne">Cuisine Tunisienne</option>
+                            <option value="Fast Food">Fast Food</option>
+
+                            <option disabled style="font-weight: bold; background-color: #f0f0f0;">HOTELLERIE & TOURISME
+                            </option>
+                            <option value="Agent de Voyage (AMADEUS)">Agent de Voyage (AMADEUS)</option>
+                            <option value="Réceptionniste d'Hôtel">Réceptionniste d'Hôtel</option>
+                            <option value="BarMan">BarMan</option>
+                            <option value="Guide Touristique">Guide Touristique</option>
+
+                            <option disabled style="font-weight: bold; background-color: #f0f0f0;">LANGUES ETRANGERES
+                            </option>
+                            <option value="Français">Français</option>
+                            <option value="Anglais">Anglais</option>
+                            <option value="Espagnol">Espagnol</option>
+                            <option value="Italien">Italien</option>
+                            <option value="Allemand">Allemand</option>
+
+                            <option disabled style="font-weight: bold; background-color: #f0f0f0;">ADMINISTRATION &
+                                GESTION</option>
+                            <option value="Secrétaire Administrative">Secrétaire Administrative</option>
+                            <option value="Assistant(e) Juridique">Assistant(e) Juridique</option>
+                            <option value="Assistant(e) Comptable">Assistant(e) Comptable</option>
+                            <option value="Educatrice de Crèche">Educatrice de Crèche</option>
+                            <option value="Agent de Saisie">Agent de Saisie</option>
+                            <option value="Déclarant Douane">Déclarant Douane</option>
+                            <option value="Gestion des Entreprises">Gestion des Entreprises</option>
+                            <option value="Gestion des Stocks">Gestion des Stocks</option>
+                            <option value="GRH">GRH</option>
+                            <option value="Comptabilité Générale">Comptabilité Générale</option>
+                            <option value="Pc Compta">Pc Compta</option>
+                            <option value="Pc Paie">Pc Paie</option>
+                            <option value="Délégué Commercial">Délégué Commercial</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Management">Management</option>
+                            <option value="Marketing Digital">Marketing Digital</option>
+                            <option value="E-Commerce">E-Commerce</option>
+                        </select>
+                        </select>
+                    </div>
 
                     <button type="button" class="next-button">Suivant</button>
                 </div>
-
                 <!-- Step 2 -->
                 <div class="form-step hidden">
                     <h2>Contact</h2>
@@ -93,55 +221,53 @@
                     <input id="whatsapp" name="hs_whatsapp_phone_number" type="tel">
 
                     <label for="email"><span style="color: red; padding-right:3px ;">*</span>Email</label>
-                    <input id="email" name="Email" type="email" required>
+                    <input id="email" name="email" type="email" required>
 
                     <button type="button" class="prev-button">Precedent</button>
                     <button type="button" class="next-button">Suivant</button>
                 </div>
 
                 <!-- Step 3 -->
-                <div class="form-step">
-                    <h2>Formation & Disponibilité</h2>
-                    <label for="formation"><span style="color: red; padding-right:3px ;">*</span>Formation</label>
-                    <input id="formation" name="Formation" type="text" required>
+                <!-- <div class="form-step">
+            <h2>Formation & Disponibilité</h2>
+            <label for="formation"><span style="color: red; padding-right:3px ;">*</span>Formation</label>
+            <input id="formation" name="Formation" type="text" required>
 
-                    <label for="availability"><span
-                            style="color: red; padding-right:3px ;">*</span>Disponibilité</label>
-                    <input id="availability" name="Disponibilité" type="text" required>
+            <label for="availability"><span style="color: red; padding-right:3px ;">*</span>Disponibilité</label>
+            <input id="availability" name="Disponibilité" type="text" required>
 
+            <button type="button" class="prev-button">Precedent</button>
+            <button type="button" class="next-button">Suivant</button>
+        </div> -->
+
+                <!-- Step 3 -->
+                <div class="form-step ">
+                    <h2>Dossier d'inscription</h2>
+                    <!-- <label for="photo"><span style="color: red; padding-right:3px ;">*</span>Photo d'identité</label>
+            <input id="photo" name="photo_d_identite" type="file" accept="image/*" required>
+            <div class="Preview">
+                <img id="photo-preview" src="" alt="Photo d'identité Preview" style="display:none;">
+            </div> -->
+
+
+                    <label for="id-card"><span style="color: red; padding-right:3px ;">*</span>Photo carte d'identité
+                        recto-verso</label>
+                    <input id="id-card" name="carte_d_identite" type="file" accept="image/*" required>
+                    <div class="Preview">
+                        <img id="id-card-preview" src="" alt="Carte d'identité Preview" style="display:none;">
+                    </div>
+
+                    <!-- 
+            <label for="birth-certificate">Photo Extrait de Naissance</label>
+            <input id="birth-certificate" name="extrait_de_naissance" type="file" accept="image/*">
+            <div class="Preview">
+                <img id="birth-certificate-preview" src="" alt="Extrait de Naissance Preview" style="display:none;">
+            </div> -->
                     <button type="button" class="prev-button">Precedent</button>
                     <button type="button" class="next-button">Suivant</button>
                 </div>
 
                 <!-- Step 4 -->
-                <div class="form-step ">
-                    <h2>Dossier d'inscription</h2>
-                    <label for="photo"><span style="color: red; padding-right:3px ;">*</span>Photo d'identité</label>
-                    <input id="photo" name="photo_d_identite" type="file" accept="image/*" required>
-                    <div class="Preview">
-                        <img id="photo-preview" src="" alt="Photo d'identité Preview" style="display:none;">
-                    </div>
-
-
-                    <label for="id-card"><span style="color: red; padding-right:3px ;">*</span>Photo carte d'identité
-                        recto-verso</label>
-                    <input id="id-card" name="photo_carte_d_identite" type="file" accept="image/*" required>
-                    <div class="Preview">
-                        <img id="id-card-preview" src="" alt="Carte d'identité Preview" style="display:none;">
-                    </div>
-
-                    
-                    <label for="birth-certificate">Photo Extrait de Naissance</label>
-                    <input id="birth-certificate" name="extrait_de_naissance" type="file" accept="image/*">
-                    <div class="Preview">
-                        <img id="birth-certificate-preview" src="" alt="Extrait de Naissance Preview"
-                            style="display:none;">
-                    </div>
-                    <button type="button" class="prev-button">Precedent</button>
-                    <button type="button" class="next-button">Suivant</button>
-                </div>
-
-                <!-- Step 5 -->
                 <div class="form-step">
                     <h2>Règles générales</h2>
                     <label for="rules">

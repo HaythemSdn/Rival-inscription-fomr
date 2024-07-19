@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 progressBarSteps[currentStep].classList.add('active');
                 error_div.classList.add('hidden');
             } else {
-                error_div.innerHTML = 'Please fill in all required fields before proceeding.';
+                error_div.innerHTML = 'Veuillez remplir tous les champs obligatoires avant de continuer.';
                 error_div.classList.remove('hidden');
             }
         });
@@ -74,24 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
     //trigger education change
     education.addEventListener('change', () => {
         console.log("education changed");
-        if (education.value === 'universite') {
+        if (education.value === 'Université') {
             speciality.classList.remove('hidden');
         } else {
             speciality.classList.add('hidden');
         }
     });
     // Image preview 
-    const photoInput = document.getElementById('photo');
-    const photoPreview = document.getElementById('photo-preview');
-    photoInput.addEventListener('change', () => previewImage(photoInput, photoPreview));
 
     const idCardInput = document.getElementById('id-card');
     const idCardPreview = document.getElementById('id-card-preview');
     idCardInput.addEventListener('change', () => previewImage(idCardInput, idCardPreview));
-
-    const birthCertificateInput = document.getElementById('birth-certificate');
-    const birthCertificatePreview = document.getElementById('birth-certificate-preview');
-    birthCertificateInput.addEventListener('change', () => previewImage(birthCertificateInput, birthCertificatePreview));
 
     function previewImage(input, preview) {
         const file = input.files[0];
@@ -113,11 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const formData = new FormData(form);
         const data = { fields: [] };
-        const fileFields = ['photo_d_identite', 'photo_carte_d_identite', 'extrait_de_naissance'];
         const uploadPromises = [];
 
         formData.forEach((value, key) => {
-            if (fileFields.includes(key) && value instanceof File) {
+            if (key=="carte_d_identite" && key!="role") {
                 const storageRef = storage.ref().child('uploads/' + value.name);
                 const uploadTask = storageRef.put(value)
                     .then(snapshot => snapshot.ref.getDownloadURL())
@@ -140,8 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     async function submitToHubSpot(data) {
-        const hubspotFormId = '7c9c8e37-770c-4bd5-a9ee-09a0fdaf81aa';
-        const portalId = '144724345';
+        const hubspotFormId = 'b6d3eeb2-4533-489d-b826-dfcefa717cc2';
+        const portalId = '44747343';
         const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${hubspotFormId}`;
 
         try {
