@@ -241,9 +241,7 @@ h2 {
     width: 400px;
 }
 
-.hidden {
-    display: none;
-}
+
 
 .prev-button,
 .next-button {
@@ -252,7 +250,8 @@ h2 {
     color: #f9f0ea;
     cursor: pointer;
     display: inline-block;
-    padding: 10px 40px;
+    width: 180px;
+    padding: 12px;
     margin: 10px 5px;
     font-size: 24px;
 
@@ -310,10 +309,14 @@ img {
         width: 100%;
         padding: 20px;
     }
+    .login-box{
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
 
     #multi-step-form {
-        max-height: 650px;
-        overflow-y: auto;
+        height: 100%;
     }
 
     .login-title {
@@ -330,4 +333,65 @@ img {
 .formation {
     width: 50%;
     margin: auto;
+}
+.rules {
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-left: 4px solid #007BFF;
+    background-color: #e9f1ff;
+}
+.rules h2 {
+    color: #007BFF;
+}
+.rules ul {
+    list-style-type: none;
+    padding: 0;
+}
+.rules li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+.rules li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #007BFF;
+}
+.rules .payment-terms ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+.rules .payment-terms li {
+    margin: 10px 0;
+}
+/* Add this to your style.css */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-overlay .spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid rgba(0, 128, 0, 0.747);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.hidden {
+    display: none;
 }

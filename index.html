@@ -67,14 +67,14 @@
                     </div>
                     <div class="flex hidden Spécialité">
                         <div class="">
-                            <label for="Spécialité" required>Spécialité universitaire</label>
-                            <input id="Spécialité" name="specialite" type="text">
+                            <label for="Spécialité" >Spécialité universitaire</label>
+                            <input id="Spécialité" name="specialite" type="text" >
                         </div>
                         <div class="">
                             <label for="annee_d_etude"><span style="color: red; padding-right:3px ;">*</span>
                                 Année d'étude
                             </label>
-                            <select id="annee_d_etude" name="annee_d_etude" required>
+                            <select id="annee_d_etude" name="annee_d_etude" >
                                 <option value="">Séléctioner</option>
                                 <option value="L1">L1</option>
                                 <option value="L2">L2</option>
@@ -268,10 +268,21 @@
                 </div>
 
                 <!-- Step 4 -->
-                <div class="form-step">
+                <div class="form-step ">
                     <h2>Règles générales</h2>
+                    <div class="rules">
+                        <ul>
+                            <li>LE Respect des lieux : les habitants de ce quartier exigent un respect total à leur environnement familial, la propreté est indispensable, veuillez garder les lieux propres.</li>
+                            <li>Modalités de paiement :</li>
+                            <ol class="payment-terms">
+                                <li>La totalité du paiement des formations suivantes se fait le jour de l’inscription ou au plus tard vers la première séance : (langues étrangères, langages de programmation, formation de métier)</li>
+                                <li>Le paiement se fait en deux tranches, la 1ere tranche (50%) la première séance, la 2éme s’effectuera lors de la 5eme séance</li>
+                                <li>Tout versement effectué lors de l’inscription ne sera pas remboursé, à moins que l’erreur ne soit imputable à l’école.</li>
+                            </ol>
+                        </ul>
+                    </div>
                     <label for="rules">
-                        <input id="rules" name="rules" type="checkbox" required> I agree to the rules and regulations
+                        <input id="rules" name="rules" type="checkbox" required> J'accepte les règles et règlements
                     </label>
 
                     <button type="button" class="prev-button">Precedent</button>
@@ -285,12 +296,16 @@
             </div>
         </div>
     </div>
-    <script src="./script.js"></script>
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <div class="loading-overlay hidden" id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
 </body>
+<script src="./script.js"></script>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
 
 </html>

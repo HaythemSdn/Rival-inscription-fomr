@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const error_div = document.querySelector('.error-div');
     const education = document.getElementById('education');
     const speciality = document.querySelector('.Spécialité');
+    const loadingOverlay = document.getElementById('loading-overlay'); 
     let currentStep = 0;
 
 
@@ -103,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', async function(event) {
         event.preventDefault();
-
+        loadingOverlay.classList.remove('hidden'); // Add this line
         const formData = new FormData(form);
         const data = { fields: [] };
         const uploadPromises = [];
@@ -126,8 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             await Promise.all(uploadPromises);
             await submitToHubSpot(data);
+            loadingOverlay.classList.add('hidden'); // Add this line
         } catch (error) {
             console.error('Error:', error);
+            loadingOverlay.classList.add('hidden'); // Add this line
         }
     });
 
@@ -148,9 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.ok) {
                 document.getElementById('success-message').classList.remove('hidden');
                 document.getElementById('multi-step-form').classList.add('hidden');
-                // setTimeout(() => {
-                //    window.location.reload();
-                // }, 7000);
+                setTimeout(() => {
+                   window.location.reload();
+                }, 5000);
             }else {
                 console.error('Error:', response.statusText);
             }
