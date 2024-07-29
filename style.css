@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
     color: #0c0d1f;
-    font: 400 15px 'Didact Gothic', sans-serif;
 }
 
 *::after,
@@ -11,12 +10,13 @@
 
 html,
 body {
-    font: 400 15px 'Didact Gothic', sans-serif;
+    font: 400 15px 'Gagalin', sans-serif;
     height: 100%;
     margin: 0;
     overflow: hidden;
     padding: 0;
     width: 100%;
+
 }
 
 body {
@@ -288,7 +288,7 @@ img {
 }
 
 #multi-step-form {
-    max-height: 600px;
+   max-height: 600px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -374,7 +374,55 @@ img {
     display: none;
 }
 
+.dropdown {
+    position: relative;
+}
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0%;
+    background-color: #f9f9f9;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+    bottom: 100%; 
+}
+.dropdown-content label {
+    display: inline;
+    font-weight: 400;
+    display: flex;
+}
+.dropdown-content input{
+    margin-right: 15px;
+    width: auto;
+}
+
+.dropdown-content label:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+.dropbtn {
+    color: black;
+    border: none;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 80%;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family:  'Gagalin', sans-serif;
+}
 
 @media (max-width: 767px) {
     .col {
