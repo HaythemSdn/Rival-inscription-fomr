@@ -252,9 +252,15 @@
 
                     <label for="id-card"><span style="color: red; padding-right:3px ;">*</span>Photo carte d'identité
                         recto-verso</label>
-                    <input id="id-card" name="carte_d_identite" type="file" accept="image/*" required>
+                    <input id="id-card" name="carte_d_identite" type="file" capture="user"  accept="image/*" required>
                     <div class="Preview">
                         <img id="id-card-preview" src="" alt="Carte d'identité Preview" style="display:none;">
+                    </div>
+                    <label for="photo"><span style="color: red; padding-right:3px ;">*</span>Photo carte d'identité
+                        recto-verso</label>
+                    <input id="photo" name="photo_id" type="file" capture="user" accept="image/*" required>
+                    <div class="Preview">
+                        <img id="photo-preview" src="" alt="Carte d'identité Preview" style="display:none;">
                     </div>
 
                     <!-- 

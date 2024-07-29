@@ -85,6 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const idCardInput = document.getElementById('id-card');
     const idCardPreview = document.getElementById('id-card-preview');
+    const photoInput = document.getElementById('photo');
+    const phtoPreview = document.getElementById('photo-preview');
+    photoInput.addEventListener('change', () => previewImage(photoInput, phtoPreview));
     idCardInput.addEventListener('change', () => previewImage(idCardInput, idCardPreview));
 
     function previewImage(input, preview) {
@@ -110,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const uploadPromises = [];
 
         formData.forEach((value, key) => {
-            if (key=="carte_d_identite" && key!="role") {
+            if (key=="carte_d_identite" || key=="photo_id" && key!="role") {
                 const storageRef = storage.ref().child('uploads/' + value.name);
                 const uploadTask = storageRef.put(value)
                     .then(snapshot => snapshot.ref.getDownloadURL())
