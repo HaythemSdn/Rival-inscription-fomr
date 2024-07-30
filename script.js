@@ -129,7 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             await Promise.all(uploadPromises);
-            await submitToHubSpot(data);
+            // await submitToHubSpot(data);
+            await submitToGoogleSheets(data); 
             loadingOverlay.classList.add('hidden'); // Add this line
         } catch (error) {
             console.error('Error:', error);
@@ -162,6 +163,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error('Error:', error);
+        }
+    }
+    async function submitToGoogleSheets(data) {
+        const googleSheetsWebAppUrl = "https://script.google.com/macros/s/AKfycbwBUOsFLLed1LzcuPk7J24LNAhyXrVJfXQyBo_Z8Vgvq_txxcszpoHhb_ohLVAtaapGxA/exec"; // Replace with your Google Apps Script web app URL
+
+        try {
+            const response = await fetch(googleSheetsWebAppUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                console.error('Google Sheets Error:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Google Sheets Error:', error);
         }
     }
     

@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    color: #0c0d1f;
+    /* color: #0c0d1f; */
 }
 
 *::after,
@@ -21,18 +21,18 @@ body {
 
 body {
     background-attachment: fixed;
-    background-image: url(https://i.pinimg.com/564x/d2/e2/50/d2e250d0e6c6b213b256dc3280de838e.jpg);
+    background-image: linear-gradient(to right bottom,#F3CC72, #023E6E);
 
-    background-image: url(https://static.pexels.com/photos/4827/nature-forest-trees-fog.jpeg);
+    background-image: url(https://static.pexels.com/photos/4827/nature-forest-trees-fog.jpeg);   
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: #0c0d1f;
+    color: #023E6E;
     position: relative;
 }
 
 a {
-    color: #ae9a51;
+    color: #F3CC72;
     text-decoration: none;
 }
 
@@ -105,6 +105,7 @@ select:focus {
     transform: translate3d(-50%, -50%, 0) scale(1, 1);
     width: 90%;
     max-width: 1000px;
+    border-radius: 10px;
 
 }
 
@@ -115,25 +116,35 @@ select:focus {
     position: relative;
 }
 
-.login-title img {
-    width: 80px;
-    height: 80px;
+.login-title div.img {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     position: absolute;
     left: 50%;
-    bottom: -38px;
+    bottom: -50px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
     transform: translateX(-50%);
     z-index: 1;
+    background-color: #F3CC72;
 }
 
 h1 {
-    font: 400 48px 'Lobster', cursive;
+    /* font: 400 48px 'Lobster', cursive; */
+    font-size: 48px;
     text-transform: uppercase;
 }
 
 h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    background-color: #F3CC72;
+    color: white;
+    padding: 10px 0;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
 .small-text {
@@ -141,12 +152,15 @@ h2 {
 }
 
 .login-form {
-    background: #f9f0ea;
+    background: white;
     text-align: center;
     width: 100%;
 }
 
-
+select option:hover {
+    box-shadow: 0 0 10px 100px #023E6E inset !important;
+    color:white;
+  }
 
 
 
@@ -158,16 +172,17 @@ h2 {
 
 .button {
     border: none;
-    background: #ae9a51;
+    background: #F3CC72;
     color: #f9f0ea;
     cursor: pointer;
     display: block;
     padding: 12px;
     width: 100%;
+    font-weight: bold;
 }
 
 .button:hover {
-    background-color: #8c7d42;
+    background-color: #F3CC72;
 }
 
 .form-step {
@@ -212,7 +227,7 @@ h2 {
 }
 
 .step.active {
-    background-color: #ae9a51;
+    background-color: #F3CC72;
     color: white;
 }
 
@@ -245,21 +260,21 @@ h2 {
 
 .prev-button,
 .next-button {
-    background: #ae9a51;
+    background: #F3CC72;
     border: none;
     color: #f9f0ea;
     cursor: pointer;
     display: inline-block;
     width: 180px;
     padding: 12px;
-    margin: 10px 5px;
-    font-size: 24px;
-
+    margin: 20px 5px;
+    font: 500 24px 'Gagalin', sans-serif;
+    border-radius: 10px;
 }
 
 .prev-button:hover,
 .next-button:hover {
-    background-color: #8c7d42;
+    background-color: #023E6E;
 }
 
 img {
@@ -288,7 +303,7 @@ img {
 }
 
 #multi-step-form {
-   max-height: 600px;
+    max-height: 500px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -298,9 +313,9 @@ img {
     width: 80%;
     margin: auto;
     border-radius: 20px;
-    font-weight: bold;
     font-size: 20px;
     margin-top: 10px;
+    font-weight: bold;
 
 }
 
@@ -376,6 +391,7 @@ img {
 
 .dropdown {
     position: relative;
+    margin-top: 50px;
 }
 
 .dropdown-content {
@@ -387,7 +403,7 @@ img {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     padding: 10px;
-    height: 200px;
+    height: 280px;
     overflow-y: auto;
     bottom: 100%; 
 }
@@ -395,15 +411,17 @@ img {
     display: inline;
     font-weight: 400;
     display: flex;
+    color: #0c0d1f;
+}
+.dropdown-content label:hover {
+    background-color: #F3CC72;
+    color: white;
 }
 .dropdown-content input{
     margin-right: 15px;
     width: auto;
 }
 
-.dropdown-content label:hover {
-    background-color: #f1f1f1;
-}
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -412,7 +430,7 @@ img {
 
 
 .dropbtn {
-    color: black;
+    color: #023E6E;
     border: none;
     font-weight: bold;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -422,6 +440,21 @@ img {
     font-size: 20px;
     cursor: pointer;
     font-family:  'Gagalin', sans-serif;
+}
+.dropdown-content .titre {
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    padding: 5px 0;
+    font-weight: 400;
+    background-color: #023E6E;
+    color: white;
+    font-size: 20px;
+
+}
+
+input[type="checkbox"] {
+    accent-color: #023E6E !important;
 }
 
 @media (max-width: 767px) {
@@ -436,7 +469,7 @@ img {
     }
 
     #multi-step-form {
-        height: 100%;
+        max-height: 100%;
     }
 
     .login-title {

@@ -18,7 +18,9 @@
         <div class="col login-title ">
             <h1 class="text-center">Devenir un nouveau membre de la famille RIVAL ?</h1>
             <span class="small-text">Inscrivez vous ICI ! </span>
-            <img src="assets/rival_logo.jpg" alt="">
+            <div class="img">
+                <img src="assets/rival_logo.png" alt="">
+            </div>
         </div>
 
         <div class="col login-form">
@@ -59,7 +61,7 @@
 
                             <label for="education"><span style="color: red; padding-right:3px ;">*</span>Niveau
                                 d'études</label>
-                            <select id="education" name="niveau_d_etudes" required>
+                            <select id="education" name="niveau_d_etudes" required  >
                                 <option value="">Séléctioner</option>
                                 <option value="CEM">CEM</option>
                                 <option value="Lycée">Lycée</option>
@@ -76,7 +78,7 @@
                             <label for="annee_d_etude"><span style="color: red; padding-right:3px ;">*</span>
                                 Année d'étude
                             </label>
-                            <select id="annee_d_etude" name="annee_d_etude">
+                            <select id="annee_d_etude" name="annee_d_etude" >
                                 <option value="">Séléctioner</option>
                                 <option value="L1">L1</option>
                                 <option value="L2">L2</option>
@@ -91,7 +93,7 @@
                         <button class="dropbtn"><span style="color: red; padding-right: 3px;">*</span>
                             Formation</button>
                         <div class="dropdown-content">
-                            <label style="font-weight: bold; text-align: center; display: block; padding: 5px 0; background-color: #f0f0f0;">INFORMATIQUE</label>
+                            <div class="titre">INFORMATIQUE</div>
                             <label><input type="checkbox" name="formation[]" value="Excel Avancé"><span>Excel
                                     Avancé</span></label>
                             <label><input type="checkbox" name="formation[]"
@@ -114,7 +116,7 @@
                                     value="Installation des Caméras de Surveillance"><span>Installation des Caméras de
                                     Surveillance</span></label>
 
-                            <label style="font-weight: bold; text-align: center; display: block; padding: 5px 0; background-color: #f0f0f0;">FORMATIONS MEDICALES</label>
+                            <div class="titre">FORMATIONS MEDICALES</div>
                             <label><input type="checkbox" name="formation[]" value="Aide Soignant(e)"><span>Aide
                                     Soignant(e)</span></label>
                             <label><input type="checkbox" name="formation[]"
@@ -134,7 +136,7 @@
                             <label><input type="checkbox" name="formation[]"
                                     value="Secourisme"><span>Secourisme</span></label>
 
-                            <label style="font-weight: bold; text-align: center; display: block; padding: 5px 0; background-color: #f0f0f0;">FORMATIONS ARTISANALES</label>
+                            <div class="titre">FORMATIONS ARTISANALES</div>
                             <label><input type="checkbox" name="formation[]" value="Résine époxy"><span>Résine
                                     époxy</span></label>
                             <label><input type="checkbox" name="formation[]" value="Cire Parfumé"><span>Cire
@@ -157,7 +159,7 @@
                             <label><input type="checkbox" name="formation[]"
                                     value="Sérigraphie"><span>Sérigraphie</span></label>
 
-                            <label style="font-weight: bold; text-align: center; display: block; padding: 5px 0; background-color: #f0f0f0;">HSE & TRAVAUX PUBLICS</label>
+                            <div class="titre">HSE & TRAVAUX PUBLICS</div>
                             <label><input type="checkbox" name="formation[]" value="Manager HSE"><span>Manager
                                     HSE</span></label>
                             <label><input type="checkbox" name="formation[]" value="Superviseur HSE"><span>Superviseur
@@ -171,7 +173,7 @@
                             <label><input type="checkbox" name="formation[]"
                                     value="Topographie"><span>Topographie</span></label>
 
-                            <label style="font-weight: bold; text-align: center; display: block; padding: 5px 0; background-color: #f0f0f0;">FORMATIONS DE BEAUTE</label>
+                            <div class="titre">FORMATIONS DE BEAUTE</div>
                             <label><input type="checkbox" name="formation[]"
                                     value="Onglerie"><span>Onglerie</span></label>
                             <label><input type="checkbox" name="formation[]" value="Extension des Cils"><span>Extension
@@ -194,8 +196,8 @@
                                     value="Make-Up Artistique & Professionnel"><span>Make-Up Artistique &
                                     Professionnel</span></label>
 
-                            <label style="font-weight: bold; text-align: center; display: block; padding: 5px 0; background-color: #f0f0f0;">FORMATIONS DE
-                                RESTAURATION</label>
+                            <div class="titre">FORMATIONS DE
+                                RESTAURATION</div>
                             <label><input type="checkbox" name="formation[]"
                                     value="Pâtisserie"><span>Pâtisserie</span></label>
                             <label><input type="checkbox" name="formation[]" value="Gâteaux Traditionnels"><span>Gâteaux
@@ -225,7 +227,7 @@
                             <label><input type="checkbox" name="formation[]" value="Fast Food"><span>Fast
                                     Food</span></label>
 
-                            <label style="font-weight: bold; text-align: center; display: block; padding: 5px 0; background-color: #f0f0f0;">HOTELLERIE & TOURISME</label>
+                            <div class="titre">HOTELLERIE & TOURISME</div>
                             <label><input type="checkbox" name="formation[]"
                                     value="Agent de Voyage (AMADEUS)"><span>Agent de Voyage (AMADEUS)</span></label>
                             <label><input type="checkbox" name="formation[]"
@@ -234,7 +236,7 @@
                             <label><input type="checkbox" name="formation[]" value="Guide Touristique"><span>Guide
                                     Touristique</span></label>
 
-                            <label style="font-weight: bold; text-align: center; display: block; padding: 5px 0; background-color: #f0f0f0;">LANGUES ETRANGERES</label>
+                            <div class="titre">LANGUES ETRANGERES</div>
                             <label><input type="checkbox" name="formation[]"
                                     value="Français"><span>Français</span></label>
                             <label><input type="checkbox" name="formation[]"
@@ -246,8 +248,8 @@
                             <label><input type="checkbox" name="formation[]"
                                     value="Allemand"><span>Allemand</span></label>
 
-                            <label style="font-weight: bold; text-align: center; display: block; padding: 5px 0; background-color: #f0f0f0;">ADMINISTRATION &
-                                GESTION</label>
+                            <div class="titre">ADMINISTRATION &
+                                GESTION</div>
                             <label><input type="checkbox" name="formation[]"
                                     value="Secrétaire Administrative"><span>Secrétaire Administrative</span></label>
                             <label><input type="checkbox" name="formation[]"
