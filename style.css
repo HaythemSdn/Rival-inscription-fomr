@@ -386,9 +386,6 @@ img {
 }
 
 
-.hidden {
-    display: none;
-}
 
 .dropdown {
     position: relative;
@@ -513,6 +510,10 @@ img {
         transform: scale(1.1);
 
     }
+    .hidden {
+        display: none;
+    }
+    
 input[type="checkbox"] {
     accent-color: #023E6E !important;
 }

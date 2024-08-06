@@ -42,14 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const education = document.getElementById('education');
     const speciality = document.querySelector('.Spécialité');
     const loadingOverlay = document.getElementById('loading-overlay');
+    const lacalSelection=document.querySelector('.no-local-overlay ');
     let currentStep = 0;
 
         // campus
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        const campus = urlParams.get('local')
+        let campus = urlParams.get('local')
         if(campus != null){
             campus= campus.toUpperCase();
+            lacalSelection.classList.add('hidden');
+        }else{
+            lacalSelection.classList.remove('hidden');  
         }
     // Add CSS for error highlighting
     const style = document.createElement('style');
