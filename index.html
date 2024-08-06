@@ -2,394 +2,500 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Inscription RIVAL </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Didact+Gothic|Lobster&amp;subset=latin-ext'> -->
-    <link href="https://fonts.cdnfonts.com/css/gagalin" rel="stylesheet">
+        <meta charset="UTF-8">
+        <title>Inscription RIVAL </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Didact+Gothic|Lobster&amp;subset=latin-ext'> -->
+        <link href="https://fonts.cdnfonts.com/css/gagalin" rel="stylesheet">
 
-    <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <div class="container row login-box">
+<div class="container row login-box">
         <div class="col login-title ">
-            <h1 class="text-center">Devenir un nouveau membre de la famille RIVAL ?</h1>
-            <span class="small-text">Inscrivez vous ICI ! </span>
-            <div class="img">
-                <img src="assets/rival_logo.png" alt="">
-            </div>
+                <h1 class="text-center">Devenir un nouveau membre de la famille RIVAL</h1>
+                <span class="small-text">Inscrivez vous ICI ! </span>
+                <div class="img">
+                        <img src="assets/rival_logo.png" alt="">
+                </div>
         </div>
 
         <div class="col login-form">
-            <div class="progress-bar">
-                <div class="step active">1</div>
-                <div class="step">2</div>
-                <!-- <div class="step">3</div> -->
-                <div class="step">3</div>
-                <div class="step">4</div>
-            </div>
-            <div class="error-div hidden">
-                Please fill in all required fields before proceeding.
-            </div>
-            <form id="multi-step-form" class="">
-                <!-- Step 1 -->
-                <div class="form-step active">
-                    <h2>Les Coordonnées</h2>
-                    <div class="flex">
-                        <div>
-                            <label for="name"><span style="color: red; padding-right:3px ;">*</span>Nom et
-                                prénom</label>
-                            <input id="name" name="lastname" type="text" required>
-                        </div>
-                        <div>
-                            <label for="dob"><span style="color: red; padding-right:3px ;">*</span>Date de
-                                naissance</label>
-                            <input id="dob" name="date_of_birth" type="date" required>
-                        </div>
-                    </div>
-                    <div class="flex">
-                        <div>
-
-                            <label for="address"><span style="color: red; padding-right:3px ;">*</span>Adresse</label>
-                            <input id="address" name="address" type="text" required>
-                        </div>
-
-                        <div>
-
-                            <label for="education"><span style="color: red; padding-right:3px ;">*</span>Niveau
-                                d'études</label>
-                            <select id="education" name="niveau_d_etudes" required  >
-                                <option value="">Séléctioner</option>
-                                <option value="CEM">CEM</option>
-                                <option value="Lycée">Lycée</option>
-                                <option value="Université">Université</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="flex hidden Spécialité">
-                        <div class="">
-                            <label for="Spécialité">Spécialité universitaire</label>
-                            <input id="Spécialité" name="specialite" type="text">
-                        </div>
-                        <div class="">
-                            <label for="annee_d_etude"><span style="color: red; padding-right:3px ;">*</span>
-                                Année d'étude
-                            </label>
-                            <select id="annee_d_etude" name="annee_d_etude" >
-                                <option value="">Séléctioner</option>
-                                <option value="L1">L1</option>
-                                <option value="L2">L2</option>
-                                <option value="L3">L3</option>
-                                <option value="M1">M1</option>
-                                <option value="M2">M2</option>
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropbtn"><span style="color: red; padding-right: 3px;">*</span>
-                            Formation</button>
-                        <div class="dropdown-content">
-                            <div class="titre">INFORMATIQUE</div>
-                            <label><input type="checkbox" name="formation[]" value="Excel Avancé"><span>Excel
-                                    Avancé</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Création des Sites Web"><span>Création des Sites Web</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Java / PHP / C++ / MySQL / Python"><span>Java / PHP / C++ / MySQL /
-                                    Python</span></label>
-                            <label><input type="checkbox" name="formation[]" value="ArchiCad / Autocad"><span>ArchiCad /
-                                    Autocad</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Revit / Lumion / 3DS Max"><span>Revit / Lumion / 3DS Max</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Réseaux Informatiques"><span>Réseaux
-                                    Informatiques</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Maintenance Informatique"><span>Maintenance Informatique</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Maintenance des Téléphones Portables"><span>Maintenance des Téléphones
-                                    Portables</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Installation des Caméras de Surveillance"><span>Installation des Caméras de
-                                    Surveillance</span></label>
-
-                            <div class="titre">FORMATIONS MEDICALES</div>
-                            <label><input type="checkbox" name="formation[]" value="Aide Soignant(e)"><span>Aide
-                                    Soignant(e)</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Assistant(e) Médical"><span>Assistant(e) Médical</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Assistant(e) Dentaire"><span>Assistant(e) Dentaire</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Assistant(e) Laboratoire"><span>Assistant(e) Laboratoire</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Vendeur(se) en Pharmacie"><span>Vendeur(se) en Pharmacie</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Auxiliaire de Vie"><span>Auxiliaire
-                                    de Vie</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Garde Malade"><span>Garde
-                                    Malade</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Délégué Médical"><span>Délégué
-                                    Médical</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Secourisme"><span>Secourisme</span></label>
-
-                            <div class="titre">FORMATIONS ARTISANALES</div>
-                            <label><input type="checkbox" name="formation[]" value="Résine époxy"><span>Résine
-                                    époxy</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Cire Parfumé"><span>Cire
-                                    Parfumé</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Fabrication des Fromages"><span>Fabrication des Fromages</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Chocolaterie"><span>Chocolaterie</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Fabrication des Sauces"><span>Fabrication des Sauces</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Fabrication des Jus"><span>Fabrication des Jus</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Fabrication de Bijoux"><span>Fabrication de Bijoux</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Fabrication de Parfums"><span>Fabrication de Parfums</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Fabrication des produits de Beauté / Nettoyage"><span>Fabrication des
-                                    produits de Beauté / Nettoyage</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Sérigraphie"><span>Sérigraphie</span></label>
-
-                            <div class="titre">HSE & TRAVAUX PUBLICS</div>
-                            <label><input type="checkbox" name="formation[]" value="Manager HSE"><span>Manager
-                                    HSE</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Superviseur HSE"><span>Superviseur
-                                    HSE</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Inspecteur HSE"><span>Inspecteur
-                                    HSE</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Agent HSE"><span>Agent
-                                    HSE</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Conducteur des Travaux"><span>Conducteur des Travaux</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Topographie"><span>Topographie</span></label>
-
-                            <div class="titre">FORMATIONS DE BEAUTE</div>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Onglerie"><span>Onglerie</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Extension des Cils"><span>Extension
-                                    des Cils</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Rehaussement des Cils"><span>Rehaussement des Cils</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Esthétique Sans Chirurgie"><span>Esthétique Sans Chirurgie</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Esthétique Dame"><span>Esthétique
-                                    Dame</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Esthétique Homme"><span>Esthétique
-                                    Homme</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Coiffure Dame"><span>Coiffure
-                                    Dame</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Coiffure Homme"><span>Coiffure
-                                    Homme</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Haute Coiffure (3D)"><span>Haute
-                                    Coiffure (3D)</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Make-Up Artistique & Professionnel"><span>Make-Up Artistique &
-                                    Professionnel</span></label>
-
-                            <div class="titre">FORMATIONS DE
-                                RESTAURATION</div>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Pâtisserie"><span>Pâtisserie</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Gâteaux Traditionnels"><span>Gâteaux
-                                    Traditionnels</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Viennoiserie"><span>Viennoiserie</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Pizza"><span>Pizza</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Pain"><span>Pain</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="MASTERCLASS Brioche"><span>MASTERCLASS Brioche</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="MASTERCLASS Mini tartelette"><span>MASTERCLASS Mini tartelette</span></label>
-                            <label><input type="checkbox" name="formation[]" value="MASTERCLASS Salés"><span>MASTERCLASS
-                                    Salés</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="MASTERCLASS Layer cake"><span>MASTERCLASS Layer cake</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="MASTERCLASS Gâteaux au miel"><span>MASTERCLASS Gâteaux au miel</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="MASTERCLASS Cake design"><span>MASTERCLASS Cake design</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Cuisine des Fêtes"><span>Cuisine des
-                                    Fêtes</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Cuisine Syrien"><span>Cuisine
-                                    Syrien</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Cuisine Tunisienne"><span>Cuisine
-                                    Tunisienne</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Fast Food"><span>Fast
-                                    Food</span></label>
-
-                            <div class="titre">HOTELLERIE & TOURISME</div>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Agent de Voyage (AMADEUS)"><span>Agent de Voyage (AMADEUS)</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Réceptionniste d'Hôtel"><span>Réceptionniste d'Hôtel</span></label>
-                            <label><input type="checkbox" name="formation[]" value="BarMan"><span>BarMan</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Guide Touristique"><span>Guide
-                                    Touristique</span></label>
-
-                            <div class="titre">LANGUES ETRANGERES</div>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Français"><span>Français</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Anglais"><span>Anglais</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Espagnol"><span>Espagnol</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Italien"><span>Italien</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Allemand"><span>Allemand</span></label>
-
-                            <div class="titre">ADMINISTRATION &
-                                GESTION</div>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Secrétaire Administrative"><span>Secrétaire Administrative</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Assistant(e) Juridique"><span>Assistant(e) Juridique</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Assistant(e) Comptable"><span>Assistant(e) Comptable</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Educatrice de Crèche"><span>Educatrice de Crèche</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Agent de Saisie"><span>Agent de
-                                    Saisie</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Déclarant Douane"><span>Déclarant
-                                    Douane</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Gestion des Entreprises"><span>Gestion des Entreprises</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Gestion des Stocks"><span>Gestion
-                                    des Stocks</span></label>
-                            <label><input type="checkbox" name="formation[]" value="GRH"><span>GRH</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Comptabilité Générale"><span>Comptabilité Générale</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Pc Compta"><span>Pc
-                                    Compta</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Pc Paie"><span>Pc
-                                    Paie</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Délégué Commercial"><span>Délégué
-                                    Commercial</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Marketing"><span>Marketing</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="Management"><span>Management</span></label>
-                            <label><input type="checkbox" name="formation[]" value="Marketing Digital"><span>Marketing
-                                    Digital</span></label>
-                            <label><input type="checkbox" name="formation[]"
-                                    value="E-Commerce"><span>E-Commerce</span></label>
-                        </div>
-                    </div>
-
-
-                    <button type="button" class="next-button">Suivant</button>
+                <div class="progress-bar">
+                        <div class="step active">1</div>
+                        <div class="step">2</div>
+                        <div class="step">3</div>
+                        <div class="step">4</div>
                 </div>
-                <!-- Step 2 -->
-                <div class="form-step hidden">
-                    <h2>Contact</h2>
-                    <label for="phone"><span style="color: red; padding-right:3px ;">*</span>Numéro téléphone</label>
-                    <input id="phone" name="phone" type="tel" required>
-
-                    <label for="whatsapp">Numéro WhatsApp</label>
-                    <input id="whatsapp" name="hs_whatsapp_phone_number" type="tel">
-
-                    <label for="email"><span style="color: red; padding-right:3px ;">*</span>Email</label>
-                    <input id="email" name="email" type="email" required>
-
-                    <button type="button" class="prev-button">Precedent</button>
-                    <button type="button" class="next-button">Suivant</button>
+                <div class="error-div hidden">
+                        Please fill in all required fields before proceeding.
                 </div>
+                <form id="multi-step-form" class="">
+                        <!-- Step 1 -->
+                        <div class="form-step active">
+                                <h2>Les Coordonnées</h2>
+                                <div class="flex">
+                                        <div>
+                                                <label for="name"><span
+                                                                style="color: red; padding-right:3px ;">*</span>Nom
+                                                        et
+                                                        prénom</label>
+                                                <input id="name" name="lastname" type="text" required>
+                                        </div>
+                                        <div>
+                                                <label for="dob"><span
+                                                                style="color: red; padding-right:3px ;">*</span>Date
+                                                        de
+                                                        naissance</label>
+                                                <input id="dob" name="date_of_birth" type="date" value="2000-01-01" required>
+                                        </div>
+                                </div>
+                                <div class="flex">
+                                        <div>
 
-                <!-- Step 3 -->
-                <!-- <div class="form-step">
-            <h2>Formation & Disponibilité</h2>
-            <label for="formation"><span style="color: red; padding-right:3px ;">*</span>Formation</label>
-            <input id="formation" name="Formation" type="text" required>
+                                                <label for="address"><span
+                                                                style="color: red; padding-right:3px ;">*</span>Adresse</label>
+                                                <input id="address" name="address" type="text" required>
+                                        </div>
 
-            <label for="availability"><span style="color: red; padding-right:3px ;">*</span>Disponibilité</label>
-            <input id="availability" name="Disponibilité" type="text" required>
+                                        <div>
 
-            <button type="button" class="prev-button">Precedent</button>
-            <button type="button" class="next-button">Suivant</button>
-        </div> -->
+                                                <label for="education"><span
+                                                                style="color: red; padding-right:3px ;">*</span>Niveau
+                                                        d'études</label>
+                                                <select id="education" name="niveau_d_etudes" required>
+                                                        <option value="">Séléctioner</option>
+                                                        <option value="CEM">CEM</option>
+                                                        <option value="Lycée">Lycée</option>
+                                                        <option value="Université">Université</option>
+                                                </select>
+                                        </div>
+                                </div>
+                                <div class="flex hidden Spécialité">
+                                        <div class="">
+                                                <label for="Spécialité">Spécialité universitaire</label>
+                                                <input id="Spécialité" name="specialite" type="text">
+                                        </div>
+                                        <div class="">
+                                                <label for="annee_d_etude"><span
+                                                                style="color: red; padding-right:3px ;">*</span>
+                                                        Année d'étude
+                                                </label>
+                                                <select id="annee_d_etude" name="annee_d_etude">
+                                                        <option value="">Séléctioner</option>
+                                                        <option value="L1">L1</option>
+                                                        <option value="L2">L2</option>
+                                                        <option value="L3">L3</option>
+                                                        <option value="M1">M1</option>
+                                                        <option value="M2">M2</option>
+                                                </select>
 
-                <!-- Step 3 -->
-                <div class="form-step ">
-                    <h2>Dossier d'inscription</h2>
-                    <!-- <label for="photo"><span style="color: red; padding-right:3px ;">*</span>Photo d'identité</label>
-            <input id="photo" name="photo_d_identite" type="file" accept="image/*" required>
-            <div class="Preview">
-                <img id="photo-preview" src="" alt="Photo d'identité Preview" style="display:none;">
-            </div> -->
+                                        </div>
+                                </div>
+                                <div class="dropdown">
+                                        <button class="dropbtn"><span
+                                                        style="color: red; padding-right: 3px;">*</span>
+                                                Formation</button>
+                                        <div class="selected-formation" id="selectedFormations"></div>
+                                        <div class="dropdown-content">
+                                                <div class="titre">FORMATIONS PRÉFÉRÉES</div>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Educatrice de Crèche"><span>Educatrice de
+                                                                Crèche</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Assistant(e) médical"><span>Assistant(e)
+                                                                médical</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Assistant(e) dentaire"><span>Assistant(e)
+                                                                dentaire</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Assistant(e) de laboratoire"><span>Assistant(e)
+                                                                de laboratoire</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Vendeur(se) en pharmacie"><span>Vendeur(se)
+                                                                en pharmacie</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Auxiliaire de vie"><span>Auxiliaire de
+                                                                vie</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Garde Malade"><span>Garde
+                                                                Malade</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Secrétaire Administrative"><span>Secrétaire
+                                                                Administrative</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Assistant(e) Juridique"><span>Assistant(e)
+                                                                Juridique</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Aide Soignant(e)"><span>Aide
+                                                                Soignant(e)</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Bureautique"><span>Bureautique</span></label>
+                                                <div class="titre">INFORMATIQUE</div>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Excel Avancé"><span>Excel
+                                                                Avancé</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Création des Sites Web"><span>Création
+                                                                des Sites Web</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Java / PHP / C++ / MySQL / Python"><span>Java
+                                                                / PHP / C++ / MySQL /
+                                                                Python</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="ArchiCad / Autocad"><span>ArchiCad /
+                                                                Autocad</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Revit / Lumion / 3DS Max"><span>Revit /
+                                                                Lumion / 3DS Max</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Réseaux Informatiques"><span>Réseaux
+                                                                Informatiques</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Maintenance Informatique"><span>Maintenance
+                                                                Informatique</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Maintenance des Téléphones Portables"><span>Maintenance
+                                                                des Téléphones
+                                                                Portables</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Installation des Caméras de Surveillance"><span>Installation
+                                                                des Caméras de
+                                                                Surveillance</span></label>
+
+                                                <div class="titre">FORMATIONS MEDICALES</div>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Aide Soignant(e)"><span>Aide
+                                                                Soignant(e)</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Assistant(e) Médical"><span>Assistant(e)
+                                                                Médical</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Assistant(e) Dentaire"><span>Assistant(e)
+                                                                Dentaire</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Assistant(e) Laboratoire"><span>Assistant(e)
+                                                                Laboratoire</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Vendeur(se) en Pharmacie"><span>Vendeur(se)
+                                                                en Pharmacie</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Auxiliaire de Vie"><span>Auxiliaire
+                                                                de Vie</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Garde Malade"><span>Garde
+                                                                Malade</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Délégué Médical"><span>Délégué
+                                                                Médical</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Secourisme"><span>Secourisme</span></label>
+
+                                                <div class="titre">FORMATIONS ARTISANALES</div>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Résine époxy"><span>Résine
+                                                                époxy</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Cire Parfumé"><span>Cire
+                                                                Parfumé</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Fabrication des Fromages"><span>Fabrication
+                                                                des Fromages</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Chocolaterie"><span>Chocolaterie</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Fabrication des Sauces"><span>Fabrication
+                                                                des Sauces</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Fabrication des Jus"><span>Fabrication
+                                                                des Jus</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Fabrication de Bijoux"><span>Fabrication
+                                                                de Bijoux</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Fabrication de Parfums"><span>Fabrication
+                                                                de Parfums</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Fabrication des produits de Beauté / Nettoyage"><span>Fabrication
+                                                                des
+                                                                produits de Beauté / Nettoyage</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Sérigraphie"><span>Sérigraphie</span></label>
+
+                                                <div class="titre">HSE & TRAVAUX PUBLICS</div>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Manager HSE"><span>Manager
+                                                                HSE</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Superviseur HSE"><span>Superviseur
+                                                                HSE</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Inspecteur HSE"><span>Inspecteur
+                                                                HSE</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Agent HSE"><span>Agent
+                                                                HSE</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Conducteur des Travaux"><span>Conducteur
+                                                                des Travaux</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Topographie"><span>Topographie</span></label>
+
+                                                <div class="titre">FORMATIONS DE BEAUTE</div>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Onglerie"><span>Onglerie</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Extension des Cils"><span>Extension
+                                                                des Cils</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Rehaussement des Cils"><span>Rehaussement
+                                                                des Cils</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Esthétique Sans Chirurgie"><span>Esthétique
+                                                                Sans Chirurgie</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Esthétique Dame"><span>Esthétique
+                                                                Dame</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Esthétique Homme"><span>Esthétique
+                                                                Homme</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Coiffure Dame"><span>Coiffure
+                                                                Dame</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Coiffure Homme"><span>Coiffure
+                                                                Homme</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Haute Coiffure (3D)"><span>Haute
+                                                                Coiffure (3D)</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Make-Up Artistique & Professionnel"><span>Make-Up
+                                                                Artistique &
+                                                                Professionnel</span></label>
+
+                                                <div class="titre">FORMATIONS DE
+                                                        RESTAURATION</div>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Pâtisserie"><span>Pâtisserie</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Gâteaux Traditionnels"><span>Gâteaux
+                                                                Traditionnels</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Viennoiserie"><span>Viennoiserie</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Pizza"><span>Pizza</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Pain"><span>Pain</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="MASTERCLASS Brioche"><span>MASTERCLASS
+                                                                Brioche</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="MASTERCLASS Mini tartelette"><span>MASTERCLASS
+                                                                Mini tartelette</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="MASTERCLASS Salés"><span>MASTERCLASS
+                                                                Salés</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="MASTERCLASS Layer cake"><span>MASTERCLASS
+                                                                Layer cake</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="MASTERCLASS Gâteaux au miel"><span>MASTERCLASS
+                                                                Gâteaux au miel</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="MASTERCLASS Cake design"><span>MASTERCLASS
+                                                                Cake design</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Cuisine des Fêtes"><span>Cuisine des
+                                                                Fêtes</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Cuisine Syrien"><span>Cuisine
+                                                                Syrien</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Cuisine Tunisienne"><span>Cuisine
+                                                                Tunisienne</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Fast Food"><span>Fast
+                                                                Food</span></label>
+
+                                                <div class="titre">HOTELLERIE & TOURISME</div>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Agent de Voyage (AMADEUS)"><span>Agent de
+                                                                Voyage (AMADEUS)</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Réceptionniste d'Hôtel"><span>Réceptionniste
+                                                                d'Hôtel</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="BarMan"><span>BarMan</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Guide Touristique"><span>Guide
+                                                                Touristique</span></label>
+
+                                                <div class="titre">LANGUES ETRANGERES</div>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Français"><span>Français</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Anglais"><span>Anglais</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Espagnol"><span>Espagnol</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Italien"><span>Italien</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Allemand"><span>Allemand</span></label>
+
+                                                <div class="titre">ADMINISTRATION &
+                                                        GESTION</div>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Secrétaire Administrative"><span>Secrétaire
+                                                                Administrative</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Assistant(e) Juridique"><span>Assistant(e)
+                                                                Juridique</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Assistant(e) Comptable"><span>Assistant(e)
+                                                                Comptable</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Educatrice de Crèche"><span>Educatrice de
+                                                                Crèche</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Agent de Saisie"><span>Agent de
+                                                                Saisie</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Déclarant Douane"><span>Déclarant
+                                                                Douane</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Gestion des Entreprises"><span>Gestion
+                                                                des Entreprises</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Gestion des Stocks"><span>Gestion
+                                                                des Stocks</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="GRH"><span>GRH</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Comptabilité Générale"><span>Comptabilité
+                                                                Générale</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Pc Compta"><span>Pc
+                                                                Compta</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Pc Paie"><span>Pc
+                                                                Paie</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Délégué Commercial"><span>Délégué
+                                                                Commercial</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Marketing"><span>Marketing</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Management"><span>Management</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="Marketing Digital"><span>Marketing
+                                                                Digital</span></label>
+                                                <label><input type="checkbox" name="formation[]"
+                                                                value="E-Commerce"><span>E-Commerce</span></label>
+                                        </div>
+                                </div>
+
+                                
+                                <button type="button" class="next-button">Suivant</button>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="form-step hidden">
+                                <h2>Contact</h2>
+                                <label for="phone"><span style="color: red; padding-right:3px ;">*</span>Numéro
+                                        téléphone</label>
+                                <input id="phone" name="phone" type="tel" required>
+
+                                <label for="whatsapp">Numéro WhatsApp</label>
+                                <input id="whatsapp" name="hs_whatsapp_phone_number" type="tel">
+
+                                <label for="email"><span
+                                                style="color: red; padding-right:3px ;">*</span>Email</label>
+                                <input id="email" name="email" type="email" required>
+
+                                <button type="button" class="prev-button">Precedent</button>
+                                <button type="button" class="next-button">Suivant</button>
+                        </div>
 
 
-                    <label for="id-card"><span style="color: red; padding-right:3px ;">*</span>Photo carte d'identité
-                        recto-verso</label>
-                    <input id="id-card" name="carte_d_identite" type="file" capture="user" accept="image/*" required>
-                    <div class="Preview">
-                        <img id="id-card-preview" src="" alt="Carte d'identité Preview" style="display:none;">
-                    </div>
-                    <label for="photo"><span style="color: red; padding-right:3px ;">*</span>Photo d'identité
-                        </label>
-                    <input id="photo" name="photo_id" type="file" capture="user" accept="image/*" required>
-                    <div class="Preview">
-                        <img id="photo-preview" src="" alt="Carte d'identité Preview" style="display:none;">
-                    </div>
 
-                    <!-- 
-            <label for="birth-certificate">Photo Extrait de Naissance</label>
-            <input id="birth-certificate" name="extrait_de_naissance" type="file" accept="image/*">
-            <div class="Preview">
-                <img id="birth-certificate-preview" src="" alt="Extrait de Naissance Preview" style="display:none;">
-            </div> -->
-                    <button type="button" class="prev-button">Precedent</button>
-                    <button type="button" class="next-button">Suivant</button>
+                        <!-- Step 3 -->
+                        <div class="form-step ">
+                                <h2>Dossier d'inscription</h2>
+
+
+
+                                <label for="id-card"><span style="color: red; padding-right:3px ;">*</span>Photo
+                                        carte d'identité
+                                        recto-verso</label>
+                                <input id="id-card" name="carte_d_identite" type="file" capture="user"
+                                        accept="image/*" required>
+                                <div class="Preview">
+                                        <img id="id-card-preview" src="" alt="Carte d'identité Preview"
+                                                style="display:none;">
+                                </div>
+                                <label for="photo"><span style="color: red; padding-right:3px ;">*</span>Photo
+                                        d'identité
+                                </label>
+                                <input id="photo" name="photo_id" type="file" capture="user" accept="image/*"
+                                        required>
+                                <div class="Preview">
+                                        <img id="photo-preview" src="" alt="Carte d'identité Preview"
+                                                style="display:none;">
+                                </div>
+
+
+                                <button type="button" class="prev-button">Precedent</button>
+                                <button type="button" class="next-button">Suivant</button>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="form-step ">
+                                <h2>Règles générales</h2>
+                                <div class="rules">
+                                        <ul>
+                                                <li>LE Respect des lieux : les habitants de ce quartier exigent
+                                                        un respect total à leur
+                                                        environnement familial, la propreté est indispensable,
+                                                        veuillez garder les lieux
+                                                        propres.</li>
+                                                <li>Modalités de paiement :</li>
+                                                <ol class="payment-terms">
+                                                        <li>La totalité du paiement des formations suivantes se
+                                                                fait le jour de l’inscription ou
+                                                                au plus tard vers la première séance : (langues
+                                                                étrangères, langages de
+                                                                programmation, formation de métier)</li>
+                                                        <li>Le paiement se fait en deux tranches, la 1ere
+                                                                tranche (50%) la première séance, la
+                                                                2éme s’effectuera lors de la 5eme séance</li>
+                                                        <li>Tout versement effectué lors de l’inscription ne
+                                                                sera pas remboursé, à moins que
+                                                                l’erreur ne soit imputable à l’école.</li>
+                                                </ol>
+                                        </ul>
+                                </div>
+                                <label for="rules">
+                                        <input id="rules" name="rules" type="checkbox" required> J'accepte les
+                                        règles et règlements
+                                </label>
+
+                                <button type="button" class="prev-button">Precedent</button>
+                                <button type="submit" class="button">Submit</button>
+                        </div>
+                </form>
+                <div id="success-message" class=" success-message hidden">
+                        <h2 style="width: 100%;">Inscription réussie!</h2>
+                        <img src="assets/check.png" alt="">
+                        <p>Merci pour votre inscription, et bienvenu dans la famille <span>RIVAL</span> !</p>
                 </div>
-
-                <!-- Step 4 -->
-                <div class="form-step ">
-                    <h2>Règles générales</h2>
-                    <div class="rules">
-                        <ul>
-                            <li>LE Respect des lieux : les habitants de ce quartier exigent un respect total à leur
-                                environnement familial, la propreté est indispensable, veuillez garder les lieux
-                                propres.</li>
-                            <li>Modalités de paiement :</li>
-                            <ol class="payment-terms">
-                                <li>La totalité du paiement des formations suivantes se fait le jour de l’inscription ou
-                                    au plus tard vers la première séance : (langues étrangères, langages de
-                                    programmation, formation de métier)</li>
-                                <li>Le paiement se fait en deux tranches, la 1ere tranche (50%) la première séance, la
-                                    2éme s’effectuera lors de la 5eme séance</li>
-                                <li>Tout versement effectué lors de l’inscription ne sera pas remboursé, à moins que
-                                    l’erreur ne soit imputable à l’école.</li>
-                            </ol>
-                        </ul>
-                    </div>
-                    <label for="rules">
-                        <input id="rules" name="rules" type="checkbox" required> J'accepte les règles et règlements
-                    </label>
-
-                    <button type="button" class="prev-button">Precedent</button>
-                    <button type="submit" class="button">Submit</button>
-                </div>
-            </form>
-            <div id="success-message" class=" success-message hidden">
-                <h2>Inscription réussie!</h2>
-                <img src="assets/icons8-vérifié-500.png" alt="">
-                <p>Merci pour votre inscription, et bienvenu dans la famille <span>RIVAL</span> !</p>
-            </div>
         </div>
-    </div>
+</div>
 
-    <div class="loading-overlay hidden" id="loading-overlay">
+<div class="loading-overlay hidden" id="loading-overlay">
         <div class="spinner"></div>
-    </div>
+</div>
 </body>
 <script src="./script.js"></script>
 <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
@@ -397,5 +503,6 @@
 
 <!-- Add Firebase products that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 
 </html>

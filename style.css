@@ -233,12 +233,13 @@ select option:hover {
 
 .success-message {
     font-size: 20px !important;
-    color: green !important;
+    color: #023E6E !important;
     font-style: italic;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .success-message span {
@@ -303,7 +304,7 @@ img {
 }
 
 #multi-step-form {
-    max-height: 500px;
+    max-height: 600px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -451,6 +452,28 @@ img {
     color: white;
     font-size: 20px;
 
+}
+
+.selected-formation {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color:#007bff26;
+    min-height: 30px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.selected-formation-item {
+    display: inline-block;
+    margin: 2px;
+    padding: 5px 10px;
+    background-color: #F3CC72;
+    border-radius: 15px;
+    font-size: 14px;
+    color: white;
 }
 
 input[type="checkbox"] {
