@@ -44,7 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingOverlay = document.getElementById('loading-overlay');
     let currentStep = 0;
 
-
+        // campus
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const campus = urlParams.get('local')
+        if(campus != null){
+            campus= campus.toUpperCase();
+        }
     // Add CSS for error highlighting
     const style = document.createElement('style');
     style.textContent = `
@@ -154,15 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // campus
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const campus = urlParams.get('local')
-        if(campus == null){
-            alert("Veuillez choisir un local");
-        }else{
-            campus= campus.toUpperCase();
-        }
+
 
     //matricule
     function formatMatricule(matricule) {
