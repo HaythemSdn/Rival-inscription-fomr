@@ -43,12 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const speciality = document.querySelector('.Spécialité');
     const loadingOverlay = document.getElementById('loading-overlay');
     const lacalSelection=document.querySelector('.no-local-overlay ');
+    const diplomePopup=document.querySelector('.diplome-popup');
+    const chips = document.querySelectorAll('.chip');
+    const closePopupButton = document.querySelector('.close-popup');
+
     let currentStep = 0;
 
         // campus
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        let campus = urlParams.get('local')
+        let campus = urlParams.get('local');
         if(campus != null){
             campus= campus.toUpperCase();
             lacalSelection.classList.add('hidden');
@@ -64,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
-    function validateStep(step) {
-        const inputs = step.querySelectorAll('input, select');
+    function validateStep(FormStep,step) {
+        const inputs = FormStep.querySelectorAll('input, select');
         let isValid = true;
         inputs.forEach(input => {
             if (input.hasAttribute('required') && !input.value.trim()) {
@@ -75,12 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 input.classList.remove('error');
             }
         });
+        if(step==1){
+            if (attestation === '') {
+                isValid = false;
+            }
+        }
         return isValid;
     }
 
     nextButtons.forEach((button) => {
         button.addEventListener('click', () => {
-            if (validateStep(formSteps[currentStep])) {
+            if (validateStep(formSteps[currentStep],currentStep)) {
                 formSteps[currentStep].classList.remove('active');
                 progressBarSteps[currentStep].classList.remove('active');
                 currentStep++;
@@ -111,6 +120,23 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             speciality.classList.add('hidden');
         }
+    });
+    //attestation selection
+    let attestation = '';
+
+    chips.forEach(chip => {
+        chip.addEventListener('click', function() {
+            chips.forEach(c => c.classList.remove('selected'));
+            this.classList.add('selected');
+            attestation = this.dataset.value;
+            if(attestation ==="Diplome"){
+                diplomePopup.classList.remove('hidden');
+            }
+            // You can use the selectedValue variable to store or process the selection
+        });
+    });
+    closePopupButton.addEventListener('click', function() {
+        diplomePopup.classList.add('hidden');
     });
     // Image preview 
 
@@ -214,7 +240,8 @@ document.addEventListener('DOMContentLoaded', () => {
             Matricule:formatMatricule(matricule),
             'Nom & Prénom': formData.get('lastname'),
             'N° De Tel': formData.get('phone'),
-            "Date d'inscription": new Date().toLocaleDateString('fr-FR')
+            "Date d'inscription": new Date().toLocaleDateString('fr-FR'),
+            'Attestation/Diplome': attestation,
         };
 
         const selectedFormations = formData.getAll('formation[]');
@@ -239,6 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {        
             // await Promise.all(uploadPromises);
             // await submitToHubSpot(data);
+            console.log(dataArray);
             for (const data of dataArray) {
                 await submitToGoogleSheets(data);
             }
@@ -256,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     async function submitToGoogleSheets(data) {
-        const scriptUrl = 'https://script.google.com/macros/s/AKfycbxB_7qXNimB9LrdJLy0--_RiHpvQ8xO5SrwuNgqy3jvXnmUSZAnSJBDT4ncXgfjodwo/exec';
+        const scriptUrl = 'https://script.google.com/macros/s/AKfycbyrz7e8z1h_VSmDYR1nMLnwqeg-0bSmSXEYhEKhYSUILbJYa4dytv3pbHbWMlkERe2R/exec';
 
         const response = await fetch(scriptUrl, {
             method: 'POST',
