@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lacalSelection = document.querySelector(".no-local-overlay ");
   const diplomePopup = document.querySelector(".diplome-popup");
   const attDiv = document.querySelector(".attDiv");
+  const formationDropDown = document.querySelector(".dropdown-content");
   const attChips = document.querySelectorAll(".attestation .chip");
   const demarchesChips = document.querySelectorAll(".demarches .chip");
   const closePopupButton = document.querySelector(".close-popup");
@@ -62,9 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
   dropDownFormation.addEventListener("click", (e) => {
     e.preventDefault();
     formationList.classList.remove("hidden");
+    formationDropDown.classList.remove("hidden");
   });
   closeFormation.addEventListener("click", () =>
-    formationList.classList.add("hidden")
+    formationList.classList.add("hidden"),
+    formationDropDown.classList.add("hidden")
   );
 
   let currentStep = 0;
@@ -90,9 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function validateStep(FormStep, step) {
     const inputs = FormStep.querySelectorAll("input, select");
+    console.log(inputs);
     let isValid = true;
     inputs.forEach((input) => {
       if (!input.value.trim()) {
+        console.log(input.value);
         isValid = false;
         input.classList.add("error");
       } else {
