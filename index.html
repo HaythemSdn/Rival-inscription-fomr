@@ -33,11 +33,11 @@
                                 <div class="step">4</div>
                         </div>
                         <div class="error-div hidden">
-                                Please fill in all required fields before proceeding.
+                                Please fill in all fields before proceeding.
                         </div>
                         <form id="multi-step-form" class="">
                                 <!-- Step 1 -->
-                                <div class="form-step ">
+                                <div class="form-step active">
                                         <h2>Les Coordonnées</h2>
                                         <div class="flex">
                                                 <div>
@@ -45,7 +45,7 @@
                                                                         style="color: red; padding-right:3px ;">*</span>Nom
                                                                 et
                                                                 prénom</label>
-                                                        <input id="name" name="lastname" type="text" required>
+                                                        <input id="name" name="lastname" type="text">
                                                 </div>
                                                 <div>
                                                         <label for="dob"><span
@@ -53,7 +53,7 @@
                                                                 de
                                                                 naissance</label>
                                                         <input id="dob" name="date_of_birth" type="date"
-                                                                value="2000-01-01" required>
+                                                                value="2000-01-01">
                                                 </div>
                                         </div>
                                         <div class="flex">
@@ -61,7 +61,7 @@
 
                                                         <label for="address"><span
                                                                         style="color: red; padding-right:3px ;">*</span>Adresse</label>
-                                                        <input id="address" name="address" type="text" required>
+                                                        <input id="address" name="address" type="text">
                                                 </div>
 
                                                 <div>
@@ -69,7 +69,7 @@
                                                         <label for="education"><span
                                                                         style="color: red; padding-right:3px ;">*</span>Niveau
                                                                 d'études</label>
-                                                        <select id="education" name="niveau_d_etudes" required>
+                                                        <select id="education" name="niveau_d_etudes">
                                                                 <option value="">Séléctioner</option>
                                                                 <option value="CEM">CEM</option>
                                                                 <option value="Lycée">Lycée</option>
@@ -103,8 +103,10 @@
                                                                 style="color: red; padding-right: 3px;">*</span>
                                                         Formation</button>
                                                 <div class="selected-formation" id="selectedFormations"></div>
-                                                <div class="dropdown-content">
-                                                        <div class="titre">FORMATIONS PRÉFÉRÉES</div>
+                                                <div class="dropdown-content hidden">
+                                                        <i class="fas fa-xmark"></i>
+                                                        <div class="titre" style="margin-top: 20px;">FORMATIONS
+                                                                PRÉFÉRÉES</div>
                                                         <label><input type="checkbox" name="formation[]"
                                                                         value="Educatrice de Crèche"><span>Educatrice de
                                                                         Crèche</span></label>
@@ -404,30 +406,46 @@
                                         <button type="button" class="next-button">Suivant</button>
                                 </div>
                                 <!-- Step 2 -->
-                                <div class="form-step active">
+                                <div class="form-step">
                                         <h2>Contact</h2>
                                         <label for="phone"><span style="color: red; padding-right:3px ;">*</span>Numéro
                                                 téléphone</label>
-                                        <input id="phone" name="phone" type="tel" required>
+                                        <input id="phone" name="phone" type="tel">
 
                                         <label for="whatsapp">Numéro WhatsApp</label>
                                         <input id="whatsapp" name="hs_whatsapp_phone_number" type="tel">
 
                                         <label for="email"><span
                                                         style="color: red; padding-right:3px ;">*</span>Email</label>
-                                        <input id="email" name="email" type="email" required>
+                                        <input id="email" name="email" type="email">
                                         <label for="att"><span
                                                         style="color: red; padding-right:3px;">*</span>Attestation ou
                                                 Diplôme</label>
                                         <div class="attestation">
-                                                <div class="chip" data-value="Attestation" >
+                                                <div class="chip" data-value="Attestation">
                                                         <img src="assets/att.png" alt="Attestation Icon">
                                                         <p>Attestation</p>
-                                                        
+
                                                 </div>
-                                                <div class="chip" data-value="Diplome" >
+                                                <div class="chip" data-value="Diplome">
                                                         <img src="./assets/dip.png" alt="Diploma Icon">
                                                         <p>Diplôme</p>
+                                                </div>
+                                        </div>
+                                        <div class="demarches">
+                                                <label><span
+                                                                style="color: red; padding-right:3px;">*</span>Intéressé(e)
+                                                        par les démarches ? </label>
+                                                <div class="choices">
+                                                        <div class="chip" data-value="oui">
+                                                                <img src="assets/oui.png" alt="oui Icon">
+                                                                <p>OUI</p>
+
+                                                        </div>
+                                                        <div class="chip" data-value="non">
+                                                                <img src="./assets/non.png" alt="non Icon">
+                                                                <p>NON</p>
+                                                        </div>
                                                 </div>
                                         </div>
 
@@ -447,7 +465,7 @@
                                                 carte d'identité
                                                 recto</label>
                                         <input id="id-card" name="carte_d_identite" type="file" capture="user"
-                                                accept="image/*" required>
+                                                accept="image/*">
                                         <div class="Preview">
                                                 <img id="id-card-preview" src="" alt="Carte d'identité Preview"
                                                         style="display:none;">
@@ -456,8 +474,7 @@
                                                 carte d'identité
                                                 verso
                                         </label>
-                                        <input id="photo" name="photo_id" type="file" capture="user" accept="image/*"
-                                                required>
+                                        <input id="photo" name="photo_id" type="file" capture="user" accept="image/*">
                                         <div class="Preview">
                                                 <img id="photo-preview" src="" alt="Carte d'identité Preview"
                                                         style="display:none;">
@@ -495,7 +512,7 @@
                                                 </ul>
                                         </div>
                                         <label for="rules">
-                                                <input id="rules" name="rules" type="checkbox" required> J'accepte les
+                                                <input id="rules" name="rules" type="checkbox"> J'accepte les
                                                 règles et règlements
                                         </label>
 
@@ -550,7 +567,7 @@
         </div>
 </body>
 <script src="./script.js"></script>
-<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<!-- Firebase App (the core Firebase SDK) is always   and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
 <!-- Add Firebase products that you want to use -->
