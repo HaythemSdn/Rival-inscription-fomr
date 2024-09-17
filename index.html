@@ -103,302 +103,320 @@
                                                                 style="color: red; padding-right: 3px;">*</span>
                                                         Formation</button>
                                                 <div class="selected-formation" id="selectedFormations"></div>
-                                                <div class="dropdown-content hidden">
-                                                        <i class="fas fa-xmark"></i>
-                                                        <div class="titre" style="margin-top: 20px;">FORMATIONS
-                                                                PRÉFÉRÉES</div>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Educatrice de Crèche"><span>Educatrice de
-                                                                        Crèche</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Assistant(e) médical"><span>Assistant(e)
-                                                                        médical</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Assistant(e) dentaire"><span>Assistant(e)
-                                                                        dentaire</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Assistant(e) de laboratoire"><span>Assistant(e)
-                                                                        de laboratoire</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Vendeur(se) en pharmacie"><span>Vendeur(se)
-                                                                        en pharmacie</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Auxiliaire de vie"><span>Auxiliaire de
-                                                                        vie</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Garde Malade"><span>Garde
-                                                                        Malade</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Secrétaire Administrative"><span>Secrétaire
-                                                                        Administrative</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Assistant(e) Juridique"><span>Assistant(e)
-                                                                        Juridique</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Aide Soignant(e)"><span>Aide
-                                                                        Soignant(e)</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Bureautique"><span>Bureautique</span></label>
-                                                        <div class="titre">INFORMATIQUE</div>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Excel Avancé"><span>Excel
-                                                                        Avancé</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Création des Sites Web"><span>Création
-                                                                        des Sites Web</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Java / PHP / C++ / MySQL / Python"><span>Java
-                                                                        / PHP / C++ / MySQL /
-                                                                        Python</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="ArchiCad / Autocad"><span>ArchiCad /
-                                                                        Autocad</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Revit / Lumion / 3DS Max"><span>Revit /
-                                                                        Lumion / 3DS Max</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Réseaux Informatiques"><span>Réseaux
-                                                                        Informatiques</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Maintenance Informatique"><span>Maintenance
-                                                                        Informatique</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Maintenance des Téléphones Portables"><span>Maintenance
-                                                                        des Téléphones
-                                                                        Portables</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Installation des Caméras de Surveillance"><span>Installation
-                                                                        des Caméras de
-                                                                        Surveillance</span></label>
+                                                <div class="formations-popup hidden">
+                                                        <div class="dropdown-content ">
+                                                                <div style="display: flex; justify-content: end; height: 30px;">
+                                                                        <i class="fas fa-xmark"></i>
+                                                                </div>
+                                                                <div style="overflow-y: auto; height: 570px;">
 
-                                                        <div class="titre">FORMATIONS MEDICALES</div>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Aide Soignant(e)"><span>Aide
-                                                                        Soignant(e)</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Assistant(e) Médical"><span>Assistant(e)
-                                                                        Médical</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Assistant(e) Dentaire"><span>Assistant(e)
-                                                                        Dentaire</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Assistant(e) Laboratoire"><span>Assistant(e)
-                                                                        Laboratoire</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Vendeur(se) en Pharmacie"><span>Vendeur(se)
-                                                                        en Pharmacie</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Auxiliaire de Vie"><span>Auxiliaire
-                                                                        de Vie</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Garde Malade"><span>Garde
-                                                                        Malade</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Délégué Médical"><span>Délégué
-                                                                        Médical</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Secourisme"><span>Secourisme</span></label>
+                                                                        <div class="titre" style="margin-top: 20px;">
+                                                                                FORMATIONS
+                                                                                PRÉFÉRÉES</div>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Educatrice de Crèche"><span>Educatrice
+                                                                                        de
+                                                                                        Crèche</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Assistant(e) médical"><span>Assistant(e)
+                                                                                        médical</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Assistant(e) dentaire"><span>Assistant(e)
+                                                                                        dentaire</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Assistant(e) de laboratoire"><span>Assistant(e)
+                                                                                        de laboratoire</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Vendeur(se) en pharmacie"><span>Vendeur(se)
+                                                                                        en pharmacie</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Auxiliaire de vie"><span>Auxiliaire
+                                                                                        de
+                                                                                        vie</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Garde Malade"><span>Garde
+                                                                                        Malade</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Secrétaire Administrative"><span>Secrétaire
+                                                                                        Administrative</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Assistant(e) Juridique"><span>Assistant(e)
+                                                                                        Juridique</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Aide Soignant(e)"><span>Aide
+                                                                                        Soignant(e)</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Bureautique"><span>Bureautique</span></label>
+                                                                        <div class="titre">INFORMATIQUE</div>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Excel Avancé"><span>Excel
+                                                                                        Avancé</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Création des Sites Web"><span>Création
+                                                                                        des Sites Web</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Java / PHP / C++ / MySQL / Python"><span>Java
+                                                                                        / PHP / C++ / MySQL /
+                                                                                        Python</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="ArchiCad / Autocad"><span>ArchiCad
+                                                                                        /
+                                                                                        Autocad</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Revit / Lumion / 3DS Max"><span>Revit
+                                                                                        /
+                                                                                        Lumion / 3DS Max</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Réseaux Informatiques"><span>Réseaux
+                                                                                        Informatiques</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Maintenance Informatique"><span>Maintenance
+                                                                                        Informatique</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Maintenance des Téléphones Portables"><span>Maintenance
+                                                                                        des Téléphones
+                                                                                        Portables</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Installation des Caméras de Surveillance"><span>Installation
+                                                                                        des Caméras de
+                                                                                        Surveillance</span></label>
 
-                                                        <div class="titre">FORMATIONS ARTISANALES</div>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Résine époxy"><span>Résine
-                                                                        époxy</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Cire Parfumé"><span>Cire
-                                                                        Parfumé</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Fabrication des Fromages"><span>Fabrication
-                                                                        des Fromages</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Chocolaterie"><span>Chocolaterie</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Fabrication des Sauces"><span>Fabrication
-                                                                        des Sauces</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Fabrication des Jus"><span>Fabrication
-                                                                        des Jus</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Fabrication de Bijoux"><span>Fabrication
-                                                                        de Bijoux</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Fabrication de Parfums"><span>Fabrication
-                                                                        de Parfums</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Fabrication des produits de Beauté / Nettoyage"><span>Fabrication
-                                                                        des
-                                                                        produits de Beauté / Nettoyage</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Sérigraphie"><span>Sérigraphie</span></label>
+                                                                        <div class="titre">FORMATIONS MEDICALES</div>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Aide Soignant(e)"><span>Aide
+                                                                                        Soignant(e)</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Assistant(e) Médical"><span>Assistant(e)
+                                                                                        Médical</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Assistant(e) Dentaire"><span>Assistant(e)
+                                                                                        Dentaire</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Assistant(e) Laboratoire"><span>Assistant(e)
+                                                                                        Laboratoire</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Vendeur(se) en Pharmacie"><span>Vendeur(se)
+                                                                                        en Pharmacie</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Auxiliaire de Vie"><span>Auxiliaire
+                                                                                        de Vie</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Garde Malade"><span>Garde
+                                                                                        Malade</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Délégué Médical"><span>Délégué
+                                                                                        Médical</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Secourisme"><span>Secourisme</span></label>
 
-                                                        <div class="titre">HSE & TRAVAUX PUBLICS</div>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Manager HSE"><span>Manager
-                                                                        HSE</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Superviseur HSE"><span>Superviseur
-                                                                        HSE</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Inspecteur HSE"><span>Inspecteur
-                                                                        HSE</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Agent HSE"><span>Agent
-                                                                        HSE</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Conducteur des Travaux"><span>Conducteur
-                                                                        des Travaux</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Topographie"><span>Topographie</span></label>
+                                                                        <div class="titre">FORMATIONS ARTISANALES</div>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Résine époxy"><span>Résine
+                                                                                        époxy</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Cire Parfumé"><span>Cire
+                                                                                        Parfumé</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Fabrication des Fromages"><span>Fabrication
+                                                                                        des Fromages</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Chocolaterie"><span>Chocolaterie</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Fabrication des Sauces"><span>Fabrication
+                                                                                        des Sauces</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Fabrication des Jus"><span>Fabrication
+                                                                                        des Jus</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Fabrication de Bijoux"><span>Fabrication
+                                                                                        de Bijoux</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Fabrication de Parfums"><span>Fabrication
+                                                                                        de Parfums</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Fabrication des produits de Beauté / Nettoyage"><span>Fabrication
+                                                                                        des
+                                                                                        produits de Beauté /
+                                                                                        Nettoyage</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Sérigraphie"><span>Sérigraphie</span></label>
 
-                                                        <div class="titre">FORMATIONS DE BEAUTE</div>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Onglerie"><span>Onglerie</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Extension des Cils"><span>Extension
-                                                                        des Cils</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Rehaussement des Cils"><span>Rehaussement
-                                                                        des Cils</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Esthétique Sans Chirurgie"><span>Esthétique
-                                                                        Sans Chirurgie</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Esthétique Dame"><span>Esthétique
-                                                                        Dame</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Esthétique Homme"><span>Esthétique
-                                                                        Homme</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Coiffure Dame"><span>Coiffure
-                                                                        Dame</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Coiffure Homme"><span>Coiffure
-                                                                        Homme</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Haute Coiffure (3D)"><span>Haute
-                                                                        Coiffure (3D)</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Make-Up Artistique & Professionnel"><span>Make-Up
-                                                                        Artistique &
-                                                                        Professionnel</span></label>
+                                                                        <div class="titre">HSE & TRAVAUX PUBLICS</div>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Manager HSE"><span>Manager
+                                                                                        HSE</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Superviseur HSE"><span>Superviseur
+                                                                                        HSE</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Inspecteur HSE"><span>Inspecteur
+                                                                                        HSE</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Agent HSE"><span>Agent
+                                                                                        HSE</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Conducteur des Travaux"><span>Conducteur
+                                                                                        des Travaux</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Topographie"><span>Topographie</span></label>
 
-                                                        <div class="titre">FORMATIONS DE
-                                                                RESTAURATION</div>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Pâtisserie"><span>Pâtisserie</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Gâteaux Traditionnels"><span>Gâteaux
-                                                                        Traditionnels</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Viennoiserie"><span>Viennoiserie</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Pizza"><span>Pizza</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Pain"><span>Pain</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="MASTERCLASS Brioche"><span>MASTERCLASS
-                                                                        Brioche</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="MASTERCLASS Mini tartelette"><span>MASTERCLASS
-                                                                        Mini tartelette</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="MASTERCLASS Salés"><span>MASTERCLASS
-                                                                        Salés</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="MASTERCLASS Layer cake"><span>MASTERCLASS
-                                                                        Layer cake</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="MASTERCLASS Gâteaux au miel"><span>MASTERCLASS
-                                                                        Gâteaux au miel</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="MASTERCLASS Cake design"><span>MASTERCLASS
-                                                                        Cake design</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Cuisine des Fêtes"><span>Cuisine des
-                                                                        Fêtes</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Cuisine Syrien"><span>Cuisine
-                                                                        Syrien</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Cuisine Tunisienne"><span>Cuisine
-                                                                        Tunisienne</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Fast Food"><span>Fast
-                                                                        Food</span></label>
+                                                                        <div class="titre">FORMATIONS DE BEAUTE</div>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Onglerie"><span>Onglerie</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Extension des Cils"><span>Extension
+                                                                                        des Cils</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Rehaussement des Cils"><span>Rehaussement
+                                                                                        des Cils</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Esthétique Sans Chirurgie"><span>Esthétique
+                                                                                        Sans Chirurgie</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Esthétique Dame"><span>Esthétique
+                                                                                        Dame</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Esthétique Homme"><span>Esthétique
+                                                                                        Homme</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Coiffure Dame"><span>Coiffure
+                                                                                        Dame</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Coiffure Homme"><span>Coiffure
+                                                                                        Homme</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Haute Coiffure (3D)"><span>Haute
+                                                                                        Coiffure (3D)</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Make-Up Artistique & Professionnel"><span>Make-Up
+                                                                                        Artistique &
+                                                                                        Professionnel</span></label>
 
-                                                        <div class="titre">HOTELLERIE & TOURISME</div>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Agent de Voyage (AMADEUS)"><span>Agent de
-                                                                        Voyage (AMADEUS)</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Réceptionniste d'Hôtel"><span>Réceptionniste
-                                                                        d'Hôtel</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="BarMan"><span>BarMan</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Guide Touristique"><span>Guide
-                                                                        Touristique</span></label>
+                                                                        <div class="titre">FORMATIONS DE
+                                                                                RESTAURATION</div>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Pâtisserie"><span>Pâtisserie</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Gâteaux Traditionnels"><span>Gâteaux
+                                                                                        Traditionnels</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Viennoiserie"><span>Viennoiserie</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Pizza"><span>Pizza</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Pain"><span>Pain</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="MASTERCLASS Brioche"><span>MASTERCLASS
+                                                                                        Brioche</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="MASTERCLASS Mini tartelette"><span>MASTERCLASS
+                                                                                        Mini tartelette</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="MASTERCLASS Salés"><span>MASTERCLASS
+                                                                                        Salés</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="MASTERCLASS Layer cake"><span>MASTERCLASS
+                                                                                        Layer cake</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="MASTERCLASS Gâteaux au miel"><span>MASTERCLASS
+                                                                                        Gâteaux au miel</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="MASTERCLASS Cake design"><span>MASTERCLASS
+                                                                                        Cake design</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Cuisine des Fêtes"><span>Cuisine
+                                                                                        des
+                                                                                        Fêtes</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Cuisine Syrien"><span>Cuisine
+                                                                                        Syrien</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Cuisine Tunisienne"><span>Cuisine
+                                                                                        Tunisienne</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Fast Food"><span>Fast
+                                                                                        Food</span></label>
 
-                                                        <div class="titre">LANGUES ETRANGERES</div>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Français"><span>Français</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Anglais"><span>Anglais</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Espagnol"><span>Espagnol</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Italien"><span>Italien</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Allemand"><span>Allemand</span></label>
+                                                                        <div class="titre">HOTELLERIE & TOURISME</div>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Agent de Voyage (AMADEUS)"><span>Agent
+                                                                                        de
+                                                                                        Voyage (AMADEUS)</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Réceptionniste d'Hôtel"><span>Réceptionniste
+                                                                                        d'Hôtel</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="BarMan"><span>BarMan</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Guide Touristique"><span>Guide
+                                                                                        Touristique</span></label>
 
-                                                        <div class="titre">ADMINISTRATION &
-                                                                GESTION</div>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Secrétaire Administrative"><span>Secrétaire
-                                                                        Administrative</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Assistant(e) Juridique"><span>Assistant(e)
-                                                                        Juridique</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Assistant(e) Comptable"><span>Assistant(e)
-                                                                        Comptable</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Educatrice de Crèche"><span>Educatrice de
-                                                                        Crèche</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Agent de Saisie"><span>Agent de
-                                                                        Saisie</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Déclarant Douane"><span>Déclarant
-                                                                        Douane</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Gestion des Entreprises"><span>Gestion
-                                                                        des Entreprises</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Gestion des Stocks"><span>Gestion
-                                                                        des Stocks</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="GRH"><span>GRH</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Comptabilité Générale"><span>Comptabilité
-                                                                        Générale</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Pc Compta"><span>Pc
-                                                                        Compta</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Pc Paie"><span>Pc
-                                                                        Paie</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Délégué Commercial"><span>Délégué
-                                                                        Commercial</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Marketing"><span>Marketing</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Management"><span>Management</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="Marketing Digital"><span>Marketing
-                                                                        Digital</span></label>
-                                                        <label><input type="checkbox" name="formation[]"
-                                                                        value="E-Commerce"><span>E-Commerce</span></label>
+                                                                        <div class="titre">LANGUES ETRANGERES</div>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Français"><span>Français</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Anglais"><span>Anglais</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Espagnol"><span>Espagnol</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Italien"><span>Italien</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Allemand"><span>Allemand</span></label>
+
+                                                                        <div class="titre">ADMINISTRATION &
+                                                                                GESTION</div>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Secrétaire Administrative"><span>Secrétaire
+                                                                                        Administrative</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Assistant(e) Juridique"><span>Assistant(e)
+                                                                                        Juridique</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Assistant(e) Comptable"><span>Assistant(e)
+                                                                                        Comptable</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Educatrice de Crèche"><span>Educatrice
+                                                                                        de
+                                                                                        Crèche</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Agent de Saisie"><span>Agent
+                                                                                        de
+                                                                                        Saisie</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Déclarant Douane"><span>Déclarant
+                                                                                        Douane</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Gestion des Entreprises"><span>Gestion
+                                                                                        des Entreprises</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Gestion des Stocks"><span>Gestion
+                                                                                        des Stocks</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="GRH"><span>GRH</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Comptabilité Générale"><span>Comptabilité
+                                                                                        Générale</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Pc Compta"><span>Pc
+                                                                                        Compta</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Pc Paie"><span>Pc
+                                                                                        Paie</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Délégué Commercial"><span>Délégué
+                                                                                        Commercial</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Marketing"><span>Marketing</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Management"><span>Management</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="Marketing Digital"><span>Marketing
+                                                                                        Digital</span></label>
+                                                                        <label><input type="checkbox" name="formation[]"
+                                                                                        value="E-Commerce"><span>E-Commerce</span></label>
+                                                                </div>
+                                                        </div>
+
                                                 </div>
                                         </div>
 
@@ -418,23 +436,25 @@
                                         <label for="email"><span
                                                         style="color: red; padding-right:3px ;">*</span>Email</label>
                                         <input id="email" name="email" type="email">
-                                        <label for="att"><span
-                                                        style="color: red; padding-right:3px;">*</span>Attestation ou
-                                                Diplôme</label>
-                                        <div class="attestation">
-                                                <div class="chip" data-value="Attestation">
-                                                        <img src="assets/att.png" alt="Attestation Icon">
-                                                        <p>Attestation</p>
+                                        <div class="attDiv">
+                                                <label for="att"><span
+                                                                style="color: red; padding-right:3px;">*</span>Attestation
+                                                        ou
+                                                        Diplôme</label>
+                                                <div class="attestation">
+                                                        <div class="chip" data-value="Attestation">
+                                                                <img src="assets/att.png" alt="Attestation Icon">
+                                                                <p>Attestation</p>
 
-                                                </div>
-                                                <div class="chip" data-value="Diplome">
-                                                        <img src="./assets/dip.png" alt="Diploma Icon">
-                                                        <p>Diplôme</p>
+                                                        </div>
+                                                        <div class="chip" data-value="Diplome">
+                                                                <img src="./assets/dip.png" alt="Diploma Icon">
+                                                                <p>Diplôme</p>
+                                                        </div>
                                                 </div>
                                         </div>
                                         <div class="demarches">
-                                                <label><span
-                                                                style="color: red; padding-right:3px;">*</span>Intéressé(e)
+                                                <label><span style="color: red; padding-right:3px;">*</span>Intéressé(e)
                                                         par les démarches ? </label>
                                                 <div class="choices">
                                                         <div class="chip" data-value="oui">

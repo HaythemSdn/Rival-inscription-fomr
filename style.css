@@ -378,15 +378,15 @@ img {
 }
 
 .dropdown-content {
-  position: absolute;
-  left: 0%;
+  /* position: absolute; */
+  /* left: 0%; */
   background-color: #f9f9f9;
-  min-width: 100%;
+  min-width: 350px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  padding: 10px;
-  height: 280px;
-  overflow-y: auto;
+  border-radius: 5px;
+  height: 600px;
+  /* overflow-y: auto; */
   bottom: 100%;
 }
 .dropdown-content label {
@@ -449,7 +449,7 @@ img {
   color: white;
 }
 .no-local-overlay,
-.diplome-popup {
+.diplome-popup,.formations-popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -563,9 +563,10 @@ img {
   margin-top: 20px;
 }
 .fa-xmark{
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  right: 0;
+  right: 0; */
+  text-align: right;
   padding: 5px;
   color: red;
   font-size: 24px;

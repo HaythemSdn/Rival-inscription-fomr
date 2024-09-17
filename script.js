@@ -49,21 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadingOverlay = document.getElementById("loading-overlay");
   const lacalSelection = document.querySelector(".no-local-overlay ");
   const diplomePopup = document.querySelector(".diplome-popup");
+  const attDiv = document.querySelector(".attDiv");
   const attChips = document.querySelectorAll(".attestation .chip");
   const demarchesChips = document.querySelectorAll(".demarches .chip");
   const closePopupButton = document.querySelector(".close-popup");
   const dropDownFormation = document.querySelector(".dropbtn");
-  const formationList = document.querySelector(".dropdown-content");
+  const formationList = document.querySelector(".formations-popup");
   const closeFormation = document.querySelector(".fa-xmark");
+  const form = document.getElementById("multi-step-form");
 
-  console.log(closeFormation);
+
   dropDownFormation.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("clicked");
     formationList.classList.remove("hidden");
   });
-  closeFormation.addEventListener(
-    "click",()=>
+  closeFormation.addEventListener("click", () =>
     formationList.classList.add("hidden")
   );
 
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputs = FormStep.querySelectorAll("input, select");
     let isValid = true;
     inputs.forEach((input) => {
-      if (input.hasAttribute("required") && !input.value.trim()) {
+      if (!input.value.trim()) {
         isValid = false;
         input.classList.add("error");
       } else {
@@ -100,9 +100,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     if (step == 1) {
-      if (attestation === "") {
-        isValid = false;
+
+        if (attestation === "") {
+          isValid = false;
+        }
+    }else if (step == 0) {
+      const formData = new FormData(form);
+      const selectedFormations = formData.getAll("formation[]");
+
+      if (selectedFormations.length == 1 && selectedFormations[0] == "Aide Soignant(e)") {
+        attDiv.classList.add("hidden");
+        console.log("yes");
       }
+     
     }
     return isValid;
   }
@@ -143,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   //attestation selection
-  let attestation = "";
+  let attestation = "aucun";
   let demarches = false;
 
   attChips.forEach((chip) => {
@@ -246,7 +256,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return `RVL-${yearPart}${monthPart}${campus[0]}${matriculePart}`;
   }
   //form submission
-  const form = document.getElementById("multi-step-form");
 
   form.addEventListener("submit", async function (event) {
     console.log("form submitted");
