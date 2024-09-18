@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   closeFormation.addEventListener("click", () =>
     formationList.classList.add("hidden"),
-    // selectedFormationsDiv.style.display = "block"
     // formationDropDown.classList.add("hidden")
   );
 
@@ -223,13 +222,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (
         document.querySelectorAll(
           'input[type="checkbox"][name="formation[]"]:checked'
-        ).length > 0
+        )
       ) {
-        if(formationList.classList.contains("hidden")){
-          selectedFormationsDiv.style.display = "block";
-        }
+          selectedFormationsDiv.classList.remove('hidden');
       } else {
-        selectedFormationsDiv.style.display = "none";
+        selectedFormationsDiv.classList.add('hidden');
       }
       updateSelectedFormations();
     });
