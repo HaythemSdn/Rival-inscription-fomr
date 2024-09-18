@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lacalSelection = document.querySelector(".no-local-overlay ");
   const diplomePopup = document.querySelector(".diplome-popup");
   const attDiv = document.querySelector(".attDiv");
-  const formationDropDown = document.querySelector(".dropdown-content");
+  // const formationDropDown = document.querySelector(".dropdown-content");
   const attChips = document.querySelectorAll(".attestation .chip");
   const demarchesChips = document.querySelectorAll(".demarches .chip");
   const closePopupButton = document.querySelector(".close-popup");
@@ -58,16 +58,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const formationList = document.querySelector(".formations-popup");
   const closeFormation = document.querySelector(".fa-xmark");
   const form = document.getElementById("multi-step-form");
+  const selectedFormationsDiv = document.getElementById("selectedFormations");
+
 
 
   dropDownFormation.addEventListener("click", (e) => {
     e.preventDefault();
     formationList.classList.remove("hidden");
-    formationDropDown.classList.remove("hidden");
+    // formationDropDown.classList.remove("hidden");
   });
   closeFormation.addEventListener("click", () =>
     formationList.classList.add("hidden"),
-    formationDropDown.classList.add("hidden")
+    // selectedFormationsDiv.style.display = "block"
+    // formationDropDown.classList.add("hidden")
   );
 
   let currentStep = 0;
@@ -92,14 +95,16 @@ document.addEventListener("DOMContentLoaded", () => {
   document.head.appendChild(style);
 
   function validateStep(FormStep, step) {
-    const inputs = FormStep.querySelectorAll("input, select");
-    console.log(inputs);
+    const inputs = FormStep.querySelectorAll("input[type=text],input[type=tel],input[type=date],input[type=email], select");
     let isValid = true;
+    console.log(inputs);
     inputs.forEach((input) => {
       if (!input.value.trim()) {
-        console.log(input.value);
-        isValid = false;
-        input.classList.add("error");
+        // console.log(input.name);
+        if(input.name!='specialite' && input.name!=='annee_d_etude' ){
+          isValid = false;
+          input.classList.add("error");
+        }
       } else {
         input.classList.remove("error");
       }
@@ -115,7 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (selectedFormations.length == 1 && selectedFormations[0] == "Aide Soignant(e)") {
         attDiv.classList.add("hidden");
-        console.log("yes");
       }
      
     }
@@ -150,7 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   //trigger education change
   education.addEventListener("change", () => {
-    console.log("education changed");
     if (education.value === "Université") {
       speciality.classList.remove("hidden");
     } else {
@@ -213,7 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkboxes = document.querySelectorAll(
     'input[type="checkbox"][name="formation[]"]'
   );
-  const selectedFormationsDiv = document.getElementById("selectedFormations");
 
   checkboxes.forEach((checkbox) => {
     //hide selectedFormationsDiv if no formation selected
@@ -223,7 +225,9 @@ document.addEventListener("DOMContentLoaded", () => {
           'input[type="checkbox"][name="formation[]"]:checked'
         ).length > 0
       ) {
-        selectedFormationsDiv.style.display = "block";
+        if(formationList.classList.contains("hidden")){
+          selectedFormationsDiv.style.display = "block";
+        }
       } else {
         selectedFormationsDiv.style.display = "none";
       }
@@ -263,7 +267,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //form submission
 
   form.addEventListener("submit", async function (event) {
-    console.log("form submitted");
     event.preventDefault();
     loadingOverlay.classList.remove("hidden");
     const formData = new FormData(form);
@@ -318,7 +321,6 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       await Promise.all(uploadPromises);
       await submitToHubSpot(data);
-      console.log(dataArray);
       for (const data of dataArray) {
         await submitToGoogleSheets(data);
       }

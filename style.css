@@ -429,7 +429,7 @@ img {
 }
 
 .selected-formation {
-  /* display: none; */
+  display: none;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
