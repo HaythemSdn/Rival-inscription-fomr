@@ -222,11 +222,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (
         document.querySelectorAll(
           'input[type="checkbox"][name="formation[]"]:checked'
-        )
+        ) > 0
       ) {
-          selectedFormationsDiv.classList.remove('hidden');
+          selectedFormationsDiv.classList.remove("hidden");
       } else {
-        selectedFormationsDiv.classList.add('hidden');
+        selectedFormationsDiv.classList.add("hidden");
       }
       updateSelectedFormations();
     });
