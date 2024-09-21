@@ -308,10 +308,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "Lieu de naissance":formData.get("lieu_de_naissance"),
     };
 
-    const selectedFormations = Array.from(formationCheckboxes).filter(checkbox => checkbox.checked);
-    const selectedFormationsValues = selectedFormations.map(cb => cb.value);
+    const selectedFormations = Array.from(formationCheckboxes).filter(checkbox => checkbox.checked).map(cb => cb.value);
     const dataArray = [];
-    // data.fields.push({ name: "formation", value: selectedFormationsValues });
     if (selectedFormations.length > 0) {
       selectedFormations.forEach((formation) => {
         const rowData = {
@@ -319,6 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ...baseData,
         };
         dataArray.push(rowData);
+        data.fields.push({ name: "formation[]", value: formation });
       });
     } else {
       const rowData = {
@@ -330,6 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       await Promise.all(uploadPromises);
       console.log(data);
+      console.log(dataArray);
       await submitToHubSpot(data);
       for (const data of dataArray) {
         await submitToGoogleSheets(data);
