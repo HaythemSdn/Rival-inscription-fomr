@@ -50,8 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const lacalSelection = document.querySelector(".no-local-overlay ");
   const diplomePopup = document.querySelector(".diplome-popup");
   const attDiv = document.querySelector(".attDiv");
-  // const formationDropDown = document.querySelector(".dropdown-content");
   const attChips = document.querySelectorAll(".attestation .chip");
+  const demarchesErr= document.querySelector(".demarchesErr");
+  const attErr= document.querySelector(".att");
   const demarchesChips = document.querySelectorAll(".demarches .chip");
   const closePopupButton = document.querySelector(".close-popup");
   const dropDownFormation = document.querySelector(".dropbtn");
@@ -59,16 +60,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeFormation = document.querySelector(".fa-xmark");
   const form = document.getElementById("multi-step-form");
   const selectedFormationsDiv = document.getElementById("selectedFormations");
-
-
+      // Get all checkboxes with name 'formation[]'
+      const formationCheckboxes = formationList.querySelectorAll('input[type="checkbox"][name="formation[]"]');
 
   dropDownFormation.addEventListener("click", (e) => {
     e.preventDefault();
     formationList.classList.remove("hidden");
     // formationDropDown.classList.remove("hidden");
   });
-  closeFormation.addEventListener("click", () =>
-    formationList.classList.add("hidden"),
+  closeFormation.addEventListener(
+    "click",
+    () => formationList.classList.add("hidden")
     // formationDropDown.classList.add("hidden")
   );
 
@@ -84,44 +86,52 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     lacalSelection.classList.remove("hidden");
   }
-  // Add CSS for error highlighting
-  const style = document.createElement("style");
-  style.textContent = `
-        .error {
-            border: 2px solid red !important;
-        }
-    `;
-  document.head.appendChild(style);
 
-  function validateStep(FormStep, step) {
-    const inputs = FormStep.querySelectorAll("input[type=text],input[type=tel],input[type=date],input[type=email], select");
-    let isValid = true;
-    console.log(inputs);
-    inputs.forEach((input) => {
-      if (!input.value.trim()) {
-        // console.log(input.name);
-        if(input.name!='specialite' && input.name!=='annee_d_etude' ){
-          isValid = false;
-          input.classList.add("error");
-        }
-      } else {
-        input.classList.remove("error");
-      }
+  function validateStep(formStep, step) {
+    const inputs = formStep.querySelectorAll(
+      'input[type="text"], input[type="tel"], input[type="date"], input[type="email"], select , input[type="file"]'
+    );
+    const selectedFormations = Array.from(formationCheckboxes).filter(checkbox => checkbox.checked);
+    const isAideSoignant = selectedFormations.length === 1 && selectedFormations[0].value === 'Aide Soignant(e)';
+    const isValid = Array.from(inputs).every((input) => {
+      const isOptional = ["specialite", "annee_d_etude"].includes(input.name);
+      const isEmpty = !input.value.trim();
+      input.classList.toggle("error", !isOptional && isEmpty);
+      return isOptional || !isEmpty;
     });
-    if (step == 1) {
 
-        if (attestation === "") {
-          isValid = false;
-        }
-    }else if (step == 0) {
-      const formData = new FormData(form);
-      const selectedFormations = formData.getAll("formation[]");
-
-      if (selectedFormations.length == 1 && selectedFormations[0] == "Aide Soignant(e)") {
-        attDiv.classList.add("hidden");
-      }
-     
+    if (step === 1) {
+      const isAttestationValid = attestation !== "aucun" || isAideSoignant;
+      const isDemarchesValid = demarches !== "";
+      attErr.classList.toggle("error", !isAttestationValid);
+      demarchesErr.classList.toggle("error", !isDemarchesValid);
+      return isValid && isAttestationValid && isDemarchesValid;
     }
+
+    
+  if (step === 0) {
+
+    
+    // Check if any checkbox is checked
+    
+    
+    if (isAideSoignant) {
+      attDiv.classList.add('hidden');
+    } else {
+      attDiv.classList.remove('hidden');
+    }
+    
+    const isFormationValid = selectedFormations.length > 0;
+    dropDownFormation.classList.toggle('error', !isFormationValid);
+    return isValid && isFormationValid;
+  }
+  if(step === 2){
+    const isCarteValid = document.getElementById("id-card").files.length > 0;
+    const isPhotoValid = document.getElementById("photo").files.length > 0;
+
+    return isValid && isCarteValid && isPhotoValid;
+  }
+
     return isValid;
   }
 
@@ -161,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   //attestation selection
   let attestation = "aucun";
-  let demarches = false;
+  let demarches = "";
 
   attChips.forEach((chip) => {
     chip.addEventListener("click", function () {
@@ -222,9 +232,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (
         document.querySelectorAll(
           'input[type="checkbox"][name="formation[]"]:checked'
-        ) > 0
+        ).length > 0
       ) {
-          selectedFormationsDiv.classList.remove("hidden");
+        selectedFormationsDiv.classList.remove("hidden");
       } else {
         selectedFormationsDiv.classList.add("hidden");
       }
@@ -269,9 +279,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData(form);
     const data = { fields: [] };
     const uploadPromises = [];
+    formData.delete("rules");
 
     formData.forEach((value, key) => {
-      if (key == "carte_d_identite" || (key == "photo_id" && key != "role")) {
+      if (key == "carte_d_identite" || key == "photo_id") {
         const storageRef = storage.ref().child("uploads/" + value.name);
         const uploadTask = storageRef
           .put(value)
@@ -295,11 +306,13 @@ document.addEventListener("DOMContentLoaded", () => {
       "Date d'inscription": new Date().toLocaleDateString("fr-FR"),
       "Attestation/Diplome": attestation,
       Demarches: demarches,
+      "N° De Whatssap":formData.get("hs_whatsapp_phone_number")
     };
 
-    const selectedFormations = formData.getAll("formation[]");
+    const selectedFormations = Array.from(formationCheckboxes).filter(checkbox => checkbox.checked);
+    const selectedFormationsValues = selectedFormations.map(cb => cb.value);
     const dataArray = [];
-
+    data.fields.push({ name: "formation", value: selectedFormationsValues });
     if (selectedFormations.length > 0) {
       selectedFormations.forEach((formation) => {
         const rowData = {
@@ -317,16 +330,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     try {
       await Promise.all(uploadPromises);
+      console.log(data);
       await submitToHubSpot(data);
       for (const data of dataArray) {
-        await submitToGoogleSheets(data);
+        // await submitToGoogleSheets(data);
       }
       incrementMatricule(campus);
       loadingOverlay.classList.add("hidden");
       document.getElementById("success-message").classList.remove("hidden");
       document.getElementById("multi-step-form").classList.add("hidden");
       // setTimeout(() => {
-      //     window.location.reload();
+      //   window.location.reload();
       // }, 5000);
     } catch (error) {
       console.error("Error:", error);
@@ -336,7 +350,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function submitToGoogleSheets(data) {
     const scriptUrl =
-      "https://script.google.com/macros/s/AKfycbwsxWyiaLbEXvItVMKE5oZpLG_-smsPgCKz4adoFYLsGxKgMAdw8Aveb_1bAd1mEtmR/exec";
+      "https://script.google.com/macros/s/AKfycbxxYsimqicZNF1AhbqwNZWnn71Jr1K7p0t7RcFtqzhZjjhUblBUgQzbN905ry_XhsqU/exec";
 
     const response = await fetch(scriptUrl, {
       method: "POST",
