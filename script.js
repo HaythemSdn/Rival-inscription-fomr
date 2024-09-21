@@ -113,8 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
     // Check if any checkbox is checked
-    
-    
     if (isAideSoignant) {
       attDiv.classList.add('hidden');
     } else {
@@ -306,7 +304,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "Date d'inscription": new Date().toLocaleDateString("fr-FR"),
       "Attestation/Diplome": attestation,
       Demarches: demarches,
-      "N° De Whatssap":formData.get("hs_whatsapp_phone_number")
+      "N° De Whatssap":formData.get("hs_whatsapp_phone_number"),
+      "Lieu de naissance":formData.get("lieu_de_naissance"),
     };
 
     const selectedFormations = Array.from(formationCheckboxes).filter(checkbox => checkbox.checked);

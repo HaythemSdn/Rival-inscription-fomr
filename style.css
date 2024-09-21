@@ -119,12 +119,12 @@ select:focus {
   margin: auto;
 }
 .login-title div.img {
-  width: 100px;
-  /* height: 100px; */
+  width: 80px;
+  height:80px;
   border-radius: 50%;
   position: absolute;
   left: 50%;
-  bottom: -50px;
+  bottom: -38px;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -135,7 +135,7 @@ select:focus {
 
 h1 {
   /* font: 400 48px 'Lobster', cursive; */
-  font-size: 48px;
+  font-size: 28px;
   text-transform: uppercase;
 }
 
@@ -616,7 +616,7 @@ input[type="checkbox"] {
 /* tablette */
 @media (min-width: 768px) and (max-width: 1024px) {
   .form-content{
-    max-height: 250px;
+    max-height: 350px;
   }
 }
 @keyframes spin {
