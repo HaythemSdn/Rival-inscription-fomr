@@ -309,6 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const selectedFormations = Array.from(formationCheckboxes).filter(checkbox => checkbox.checked).map(cb => cb.value);
+    data.fields.push({ name: "formation", value: selectedFormations.join(",") });
     const dataArray = [];
     if (selectedFormations.length > 0) {
       selectedFormations.forEach((formation) => {
@@ -317,7 +318,6 @@ document.addEventListener("DOMContentLoaded", () => {
           ...baseData,
         };
         dataArray.push(rowData);
-        data.fields.push({ name: "formation[]", value: formation });
       });
     } else {
       const rowData = {
@@ -338,9 +338,9 @@ document.addEventListener("DOMContentLoaded", () => {
       loadingOverlay.classList.add("hidden");
       document.getElementById("success-message").classList.remove("hidden");
       document.getElementById("multi-step-form").classList.add("hidden");
-      // setTimeout(() => {
-      //   window.location.reload();
-      // }, 5000);
+      setTimeout(() => {
+        window.location.reload();
+      }, 5000);
     } catch (error) {
       console.error("Error:", error);
       loadingOverlay.classList.add("hidden");
