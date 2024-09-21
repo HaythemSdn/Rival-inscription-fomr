@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectedFormations = Array.from(formationCheckboxes).filter(checkbox => checkbox.checked);
     const isAideSoignant = selectedFormations.length === 1 && selectedFormations[0].value === 'Aide Soignant(e)';
     const isValid = Array.from(inputs).every((input) => {
-      const isOptional = ["specialite", "annee_d_etude"].includes(input.name);
+      const isOptional = ["specialite", "annee_d_etude","hs_whatsapp_phone_number"].includes(input.name);
       const isEmpty = !input.value.trim();
       input.classList.toggle("error", !isOptional && isEmpty);
       return isOptional || !isEmpty;
@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectedFormations = Array.from(formationCheckboxes).filter(checkbox => checkbox.checked);
     const selectedFormationsValues = selectedFormations.map(cb => cb.value);
     const dataArray = [];
-    data.fields.push({ name: "formation", value: selectedFormationsValues });
+    // data.fields.push({ name: "formation", value: selectedFormationsValues });
     if (selectedFormations.length > 0) {
       selectedFormations.forEach((formation) => {
         const rowData = {
@@ -332,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(data);
       await submitToHubSpot(data);
       for (const data of dataArray) {
-        // await submitToGoogleSheets(data);
+        await submitToGoogleSheets(data);
       }
       incrementMatricule(campus);
       loadingOverlay.classList.add("hidden");
@@ -349,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function submitToGoogleSheets(data) {
     const scriptUrl =
-      "https://script.google.com/macros/s/AKfycbxxYsimqicZNF1AhbqwNZWnn71Jr1K7p0t7RcFtqzhZjjhUblBUgQzbN905ry_XhsqU/exec";
+      "https://script.google.com/macros/s/AKfycbyp4cE-5CKcC4c23q1ejxwniAkNnuHYkLOzk4QV0BRS96W8MR1l9XBa2woYS03gLXsN/exec";
 
     const response = await fetch(scriptUrl, {
       method: "POST",

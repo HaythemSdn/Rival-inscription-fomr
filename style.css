@@ -110,6 +110,7 @@ select:focus {
 
 .login-title {
   background: transparent;
+  padding-bottom: 45px;
   text-shadow: 0 0 15px white;
   width: 100%;
   position: relative;
