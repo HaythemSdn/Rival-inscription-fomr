@@ -617,7 +617,7 @@ input[type="checkbox"] {
 /* tablette */
 @media (min-width: 768px) and (max-width: 1024px) {
   .form-content{
-    max-height: 5000px;
+    max-height: 500px;
   }
 }
 @keyframes spin {

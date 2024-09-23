@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const selectedFormations = Array.from(formationCheckboxes).filter(checkbox => checkbox.checked).map(cb => cb.value);
-    data.fields.push({ name: "formation", value: selectedFormations.join(",") });
+    data.fields.push({ name: "formation", value: selectedFormations.join(";")+";" });
     const dataArray = [];
     if (selectedFormations.length > 0) {
       selectedFormations.forEach((formation) => {
