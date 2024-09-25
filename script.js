@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeFormation = document.querySelector(".fa-xmark");
   const form = document.getElementById("multi-step-form");
   const selectedFormationsDiv = document.getElementById("selectedFormations");
+  const emailErr = document.querySelector(".emailErr");
       // Get all checkboxes with name 'formation[]'
       const formationCheckboxes = formationList.querySelectorAll('input[type="checkbox"][name="formation[]"]');
 
@@ -103,9 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (step === 1) {
       const isAttestationValid = attestation !== "aucun" || isAideSoignant;
       const isDemarchesValid = demarches !== "";
+      //email matching regex
+      const isEmailValid = document.getElementById("email").value.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+      emailErr.classList.toggle("error", !isEmailValid);
       attErr.classList.toggle("error", !isAttestationValid);
       demarchesErr.classList.toggle("error", !isDemarchesValid);
-      return isValid && isAttestationValid && isDemarchesValid;
+      return isValid && isAttestationValid && isDemarchesValid && isEmailValid;
     }
 
     
@@ -144,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
         error_div.classList.add("hidden");
       } else {
         error_div.innerHTML =
-          "Veuillez remplir tous les champs obligatoires avant de continuer.";
+          "Veuillez remplir tous les champs correctement avant de continuer.";
         error_div.classList.remove("hidden");
       }
     });
